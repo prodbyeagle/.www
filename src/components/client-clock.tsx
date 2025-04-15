@@ -1,39 +1,49 @@
 'use client';
 
+import NumberFlow, { NumberFlowGroup } from '@number-flow/react';
 import { useEffect, useState } from 'react';
 
 export function ClientClock() {
-	const [time, setTime] = useState<string>('');
+	const [hours, setHours] = useState(0);
+	const [minutes, setMinutes] = useState(0);
+	const [seconds, setSeconds] = useState(0);
 
 	useEffect(() => {
 		const updateTime = () => {
 			const now = new Date();
-			const hours = now.getHours().toString().padStart(2, '0');
-			const minutes = now.getMinutes().toString().padStart(2, '0');
-			const seconds = now.getSeconds().toString().padStart(2, '0');
-			const milliseconds = now
-				.getMilliseconds()
-				.toString()
-				.padStart(3, '0');
-
-			const microseconds = Math.floor(Math.random() * 1000)
-				.toString()
-				.padStart(3, '0');
-			const nanoseconds = Math.floor(Math.random() * 1000)
-				.toString()
-				.padStart(3, '0');
-
-			setTime(
-				`${hours}:${minutes}:${seconds}:${milliseconds}.${microseconds}${nanoseconds}`
-			);
+			setHours(now.getHours());
+			setMinutes(now.getMinutes());
+			setSeconds(now.getSeconds());
 		};
 
 		updateTime();
 
-		const interval = setInterval(updateTime, 1);
+		const interval = setInterval(updateTime, 1000);
 
 		return () => clearInterval(interval);
 	}, []);
 
-	return <p className='font-mono'>Client time: {time}</p>;
+	return (
+		<NumberFlowGroup>
+			<div>
+				<NumberFlow
+					value={hours}
+					format={{ minimumIntegerDigits: 2 }}
+					trend={0}
+				/>
+				<NumberFlow
+					prefix=':'
+					value={minutes}
+					format={{ minimumIntegerDigits: 2 }}
+					trend={0}
+				/>
+				<NumberFlow
+					prefix=':'
+					value={seconds}
+					format={{ minimumIntegerDigits: 2 }}
+					trend={0}
+				/>
+			</div>
+		</NumberFlowGroup>
+	);
 }
