@@ -29,18 +29,6 @@ export function ProjectDialog({
 				<DialogHeader>
 					<DialogTitle className='flex items-center gap-2'>
 						{project.title}
-						{project.status && (
-							<Badge
-								variant={
-									project.status === 'online'
-										? 'secondary'
-										: project.status === 'offline'
-										? 'destructive'
-										: 'secondary'
-								}>
-								{project.status}
-							</Badge>
-						)}
 					</DialogTitle>
 				</DialogHeader>
 
