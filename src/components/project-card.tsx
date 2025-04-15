@@ -25,7 +25,7 @@ export function ProjectCard(props: ProjectCardProps) {
 	return (
 		<>
 			<Card
-				className='hover:border-primary/50 transition-colors cursor-pointer group'
+				className='hover:border-primary/30 transition cursor-pointer group'
 				onClick={() => setIsDialogOpen(true)}>
 				<CardHeader>
 					<CardTitle>{title}</CardTitle>
@@ -34,7 +34,7 @@ export function ProjectCard(props: ProjectCardProps) {
 				<CardFooter>
 					<div className='flex flex-wrap gap-2'>
 						{tags.map((tag) => (
-							<Badge variant='secondary' key={tag}>
+							<Badge variant='outline' key={tag}>
 								{tag}
 							</Badge>
 						))}
