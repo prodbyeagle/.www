@@ -1,34 +1,52 @@
+'use client';
+
+import { useState } from 'react';
 import {
 	Card,
-	CardContent,
 	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
 import { Badge } from './ui/badge';
+import { ProjectDialog } from './project-dialog';
+import { Project } from '@/lib/data';
 
-interface ProjectCardProps {
-	title: string;
-	description: string;
-	tags: string[];
+interface ProjectCardProps extends Omit<Project, 'id'> {
+	id: string;
 }
 
-export function ProjectCard({ title, description, tags }: ProjectCardProps) {
+export function ProjectCard(props: ProjectCardProps) {
+	const { title, description, tags, id, ...projectData } = props;
+	const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+	const project: Project = { id, title, description, tags, ...projectData };
+
 	return (
-		<Card className='rounded-sm'>
-			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription>{description}</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<div className='flex flex-wrap gap-2'>
-					{tags.map((tag) => (
-						<Badge variant='secondary' key={tag}>
-							{tag}
-						</Badge>
-					))}
-				</div>
-			</CardContent>
-		</Card>
+		<>
+			<Card
+				className='hover:border-primary/50 transition-colors cursor-pointer group'
+				onClick={() => setIsDialogOpen(true)}>
+				<CardHeader>
+					<CardTitle>{title}</CardTitle>
+					<CardDescription>{description}</CardDescription>
+				</CardHeader>
+				<CardFooter>
+					<div className='flex flex-wrap gap-2'>
+						{tags.map((tag) => (
+							<Badge variant='secondary' key={tag}>
+								{tag}
+							</Badge>
+						))}
+					</div>
+				</CardFooter>
+			</Card>
+
+			<ProjectDialog
+				project={project}
+				isOpen={isDialogOpen}
+				onOpenChange={setIsDialogOpen}
+			/>
+		</>
 	);
 }
