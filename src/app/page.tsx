@@ -5,7 +5,7 @@ import { projects } from '@/lib/data';
 
 export default function Home() {
 	return (
-		<div className='min-h-screen bg-background text-foreground'>
+		<div className='min-h-screen text-foreground'>
 			<div className='absolute top-4 right-4'>
 				<ThemeToggle />
 			</div>
