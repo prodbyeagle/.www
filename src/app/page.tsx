@@ -6,7 +6,7 @@ import { projects } from '@/lib/data';
 export default function Home() {
 	return (
 		<div className='min-h-screen bg-background text-foreground'>
-			<div className='absolute top-5 right-5'>
+			<div className='absolute top-4 right-4'>
 				<ThemeToggle />
 			</div>
 
@@ -36,7 +36,7 @@ export default function Home() {
 
 				<section className='mb-16'>
 					<h2 className='text-xl font-medium mb-6 border-b pb-2'>
-						Projects
+						Newest Projects
 					</h2>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 						{projects.map((project) => (
