@@ -3,6 +3,7 @@ import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Footer } from '@/components/footer';
+import { DottedBackground } from '@/components/dotted-background';
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
@@ -28,7 +29,14 @@ export default function RootLayout({
 					attribute='class'
 					defaultTheme='system'
 					enableSystem>
-					<div className='container mx-auto'>{children}</div>
+					<div className='container mx-auto'>
+						<DottedBackground
+							dotColor='oklch(0.28 0.006 285.885)'
+							spacing={14}
+							fadePercentage={245}
+						/>
+						{children}
+					</div>
 				</ThemeProvider>
 				<Footer />
 			</body>
