@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Footer } from '@/components/footer';
-
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
@@ -15,8 +10,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Portfolio',
-	description: 'Professional Portfolio',
+	title: 'prodbyeagle',
+	description: '@prodbyeagle 🦅',
+	icons: 'https://kappa.lol/WTiY5',
 };
 
 export default function RootLayout({
@@ -25,9 +21,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='de' suppressHydrationWarning>
+		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono cursor-default select-none`}>
+				className={`${geistMono.variable} antialiased font-mono cursor-default select-none`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
