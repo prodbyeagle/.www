@@ -1,3 +1,4 @@
+import { ClientClock } from '@/components/client-clock';
 import { ProjectCard } from '@/components/project-card';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { projects } from '@/lib/data';
@@ -10,7 +11,14 @@ export default function Home() {
 			</div>
 
 			<header className='pt-16 pb-8 px-6 md:px-12 lg:px-24'>
-				<h1 className='text-3xl md:text-4xl font-bold'>prodbyeagle</h1>
+				<div className='flex items-center gap-4'>
+					<h1 className='text-2xl md:text-3xl font-bold'>
+						prodbyeagle
+					</h1>
+					<div className='font-mono items-baseline text-lg'>
+						<ClientClock />
+					</div>
+				</div>
 			</header>
 
 			<main className='px-6 md:px-12 lg:px-24 pb-24'>
@@ -32,12 +40,7 @@ export default function Home() {
 					</h2>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 						{projects.map((project) => (
-							<ProjectCard
-								key={project.id}
-								title={project.title}
-								description={project.description}
-								tags={project.tags}
-							/>
+							<ProjectCard key={project.id} {...project} />
 						))}
 					</div>
 				</section>
