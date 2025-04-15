@@ -15,9 +15,8 @@ export const projects: Project[] = [
 		description: 'A small website for links.',
 		longDescription:
 			'EagleLink is a minimalist link-in-bio style website that showcases all my important links in one place. Built with performance and simplicity in mind using Next.js and Tailwind CSS.',
-		tags: ['Next.js', 'TypeScript', 'Tailwind'],
+		tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
 		url: 'https://elink.vercel.app',
-		imageUrl: 'https://kappa.lol/9d7AOY',
 	},
 	{
 		id: 'eaglepowershell',
