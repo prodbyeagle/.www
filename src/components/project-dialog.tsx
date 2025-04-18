@@ -66,20 +66,33 @@ export function ProjectDialog({
 						</div>
 					</div>
 
-					{project.url && (
-						<div className='pt-2'>
+					<div className='flex flex-row gap-2'>
+						{project.url && (
 							<Button asChild className='w-full sm:w-auto'>
 								<a
 									href={project.url}
 									target='_blank'
 									rel='noopener noreferrer'
 									className='flex items-center gap-2'>
-									Visit Project{' '}
+									Visit Website{' '}
 									<ExternalLink className='h-4 w-4' />
 								</a>
 							</Button>
-						</div>
-					)}
+						)}
+
+						{project.github && (
+							<Button asChild className='w-full sm:w-auto'>
+								<a
+									href={project.github}
+									target='_blank'
+									rel='noopener noreferrer'
+									className='flex items-center gap-2'>
+									Visit Codebase{' '}
+									<ExternalLink className='h-4 w-4' />
+								</a>
+							</Button>
+						)}
+					</div>
 				</div>
 			</DialogContent>
 		</Dialog>
