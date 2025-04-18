@@ -4,12 +4,10 @@ import { useState } from 'react';
 import {
 	Card,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import { Badge } from './ui/badge';
-import { ProjectDialog } from './project-dialog';
+import { ProjectDialog } from '@/components/project-dialog';
 import { Project } from '@/lib/data';
 
 interface ProjectCardProps extends Omit<Project, 'id'> {
@@ -31,15 +29,6 @@ export function ProjectCard(props: ProjectCardProps) {
 					<CardTitle>{title}</CardTitle>
 					<CardDescription>{description}</CardDescription>
 				</CardHeader>
-				<CardFooter>
-					<div className='flex flex-wrap gap-2'>
-						{tags.map((tag) => (
-							<Badge variant='outline' key={tag}>
-								{tag}
-							</Badge>
-						))}
-					</div>
-				</CardFooter>
 			</Card>
 
 			<ProjectDialog
