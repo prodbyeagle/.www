@@ -66,16 +66,16 @@ export function ProjectDialog({
 						</div>
 					</div>
 
-					<div className='flex flex-row gap-2'>
+					<div className='flex flex-col sm:flex-row gap-2'>
 						{project.url && (
 							<Button asChild className='w-full sm:w-auto'>
 								<a
 									href={project.url}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='flex items-center gap-2'>
+									className='flex items-center justify-center gap-2'>
 									Visit Website{' '}
-									<ExternalLink className='h-4 w-4' />
+									<ExternalLink className='size-4' />
 								</a>
 							</Button>
 						)}
@@ -86,9 +86,9 @@ export function ProjectDialog({
 									href={project.github}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='flex items-center gap-2'>
+									className='flex items-center justify-center gap-2'>
 									Visit Codebase{' '}
-									<ExternalLink className='h-4 w-4' />
+									<ExternalLink className='size-4' />
 								</a>
 							</Button>
 						)}
