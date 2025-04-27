@@ -25,7 +25,7 @@ export const projects: Project[] = [
 		title: 'MeowRecorder',
 		description: 'An Discord bot that records voice channels.',
 		longDescription:
-			'EagleRecorder is a Discord bot that allows users to record voice channels and save the recordings for later use. It is designed to be easy to use and lightweight, making it a great addition to any Discord server.',
+			'EagleRecorder is a Discord bot that allows users to record voice channels and save the recordings for later use. It is designed to be easy to use and lightweight.',
 		tags: ['TypeScript'],
 		github: 'https://github.com/prodbyeagle/MeowRecorder',
 	},
