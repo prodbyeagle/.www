@@ -8,26 +8,23 @@ import {
 	CardTitle,
 } from '@/components/ui/card';
 import { ProjectDialog } from '@/components/project-dialog';
-import { Project } from '@/lib/data';
+import type { Project } from '@/lib/data';
 
-interface ProjectCardProps extends Omit<Project, 'id'> {
-	id: string;
+interface ProjectCardProps {
+	project: Project;
 }
 
-export function ProjectCard(props: ProjectCardProps) {
-	const { title, description, tags, id, ...projectData } = props;
+export function ProjectCard({ project }: ProjectCardProps) {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-	const project: Project = { id, title, description, tags, ...projectData };
 
 	return (
 		<>
 			<Card
-				className='hover:border-primary/30 transition cursor-pointer group'
+				className='hover:border-border hover:scale-[1.03] transition-transform duration-100 cursor-pointer'
 				onClick={() => setIsDialogOpen(true)}>
 				<CardHeader>
-					<CardTitle>{title}</CardTitle>
-					<CardDescription>{description}</CardDescription>
+					<CardTitle>{project.title}</CardTitle>
+					<CardDescription>{project.description}</CardDescription>
 				</CardHeader>
 			</Card>
 
