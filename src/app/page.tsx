@@ -1,4 +1,4 @@
-import { ClientClock } from '@/components/client-clock';
+import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { projects } from '@/lib/data';
@@ -16,7 +16,7 @@ export default function Home() {
 						prodbyeagle
 					</h1>
 					<div className='font-mono items-baseline text-lg'>
-						<ClientClock />
+						<Clock />
 					</div>
 				</div>
 			</header>
