@@ -38,9 +38,9 @@ export default function Home() {
 					<h2 className='text-xl font-medium mb-6 border-b pb-2'>
 						Newest Projects
 					</h2>
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
 						{projects.map((project) => (
-							<ProjectCard key={project.id} {...project} />
+							<ProjectCard key={project.id} project={project} />
 						))}
 					</div>
 				</section>
