@@ -40,6 +40,7 @@ export function ProjectDialog({
 								src={project.imageUrl}
 								alt={project.title}
 								fill
+								unoptimized
 								className='object-cover'
 								sizes='(max-width: 768px) 100vw, 50vw'
 							/>
