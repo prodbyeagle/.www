@@ -1,6 +1,6 @@
 'use client';
 
-import { Project } from '@/lib/data';
+import { Project } from '@/lib/projects';
 import {
 	Dialog,
 	DialogContent,

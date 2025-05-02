@@ -8,7 +8,7 @@ import {
 	CardTitle,
 } from '@/components/ui/card';
 import { ProjectDialog } from '@/components/project-dialog';
-import type { Project } from '@/lib/data';
+import type { Project } from '@/lib/projects';
 
 interface ProjectCardProps {
 	project: Project;
