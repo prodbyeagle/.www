@@ -2,7 +2,7 @@ import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
-import { projects } from '@/lib/data';
+import { PROJECTS } from '@/lib/projects';
 import Link from 'next/link';
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
 								href='https://react.dev'
 								target='_blank'
 								rel='noopener noreferrer'
-								className='text-[#61dafb]/80 hover:underline underline-offset-2'>
+								className='text-[#61dafb]/80 hover:font-extrabold hover:text-lg duration-300 transition-all hover:underline underline-offset-2'>
 								React
 							</Link>
 							,{' '}
@@ -44,7 +44,7 @@ export default function Home() {
 								href='https://www.typescriptlang.org/'
 								target='_blank'
 								rel='noopener noreferrer'
-								className='text-[#3178c6]/80 hover:underline underline-offset-2'>
+								className='text-[#3178c6]/80 hover:font-extrabold hover:text-lg duration-300 transition-all hover:underline underline-offset-2'>
 								TypeScript
 							</Link>{' '}
 							and{' '}
@@ -52,7 +52,7 @@ export default function Home() {
 								href='https://nextjs.org/'
 								target='_blank'
 								rel='noopener noreferrer'
-								className='text-[#f0f0f0] hover:underline underline-offset-2'>
+								className='text-accent-foreground hover:font-extrabold hover:text-lg duration-300 transition-all hover:underline underline-offset-2'>
 								Next.js
 							</Link>{' '}
 							to create performant and user-friendly web
@@ -75,7 +75,7 @@ export default function Home() {
 						Newest Projects
 					</h2>
 					<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-						{projects.map((project) => (
+						{PROJECTS.map((project) => (
 							<ProjectCard key={project.id} project={project} />
 						))}
 					</div>

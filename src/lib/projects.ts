@@ -9,7 +9,7 @@ export interface Project {
 	imageUrl?: string;
 }
 
-export const projects: Project[] = [
+export const PROJECTS: Project[] = [
 	{
 		id: 'eaglechat',
 		title: 'EagleChat',
@@ -17,7 +17,7 @@ export const projects: Project[] = [
 		longDescription:
 			'EagleChat is a chat overlay for OBS Studio that allows streamers to display their Twitch chat on their stream.',
 		tags: ['TypeScript'],
-		imageUrl: 'https://kappa.lol/WzWZw0',
+		imageUrl: 'https://kappa.lol/CxNeA8',
 		github: '	https://github.com/prodbyeagle/eaglechat',
 	},
 	{
