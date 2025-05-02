@@ -11,6 +11,16 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
 	{
+		id: 'color',
+		title: '@prodbyeagle/color',
+		description:
+			'A lightweight TypeScript library for extracting and formatting dominant colors from images.',
+		longDescription:
+			'@prodbyeagle/color is a lightweight, framework-agnostic TypeScript library for extracting and formatting dominant colors from images. It supports RGB, HEX, and HSL formats, making it ideal for color palette generation, theming, and creative applications.',
+		tags: ['TypeScript'],
+		github: '	https://github.com/prodbyeagle/color',
+	},
+	{
 		id: 'eaglechat',
 		title: 'EagleChat',
 		description: 'An Chat Overlay for OBS Studio.',
