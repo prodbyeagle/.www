@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
 		longDescription:
 			'EagleChat is a chat overlay for OBS Studio that allows streamers to display their Twitch chat on their stream.',
 		tags: ['TypeScript'],
-		imageUrl: 'https://kappa.lol/CxNeA8',
+		imageUrl: 'https://kappa.lol/_j8CzH',
 		github: '	https://github.com/prodbyeagle/eaglechat',
 	},
 	{
