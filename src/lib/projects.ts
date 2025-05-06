@@ -14,65 +14,74 @@ export const PROJECTS: Project[] = [
 		id: 'color',
 		title: '@prodbyeagle/color',
 		description:
-			'A lightweight TypeScript library for extracting and formatting dominant colors from images.',
+			'A lightweight, framework-agnostic TypeScript library for extracting and formatting dominant colors from images.',
 		longDescription:
-			'@prodbyeagle/color is a lightweight, framework-agnostic TypeScript library for extracting and formatting dominant colors from images. It supports RGB, HEX, and HSL formats, making it ideal for color palette generation, theming, and creative applications.',
+			'@prodbyeagle/color is a minimal, framework-independent TypeScript library designed to extract dominant colors from images. It supports multiple color formats including RGB, HEX, HSL, and OKLCH—making it ideal for palette generation, UI theming, and creative tooling.',
 		tags: ['TypeScript'],
-		github: '	https://github.com/prodbyeagle/color',
+		url: 'https://prodbyeagle-color.vercel.app',
+		github: 'https://github.com/prodbyeagle/color',
 	},
+
 	{
 		id: 'eaglechat',
 		title: 'EagleChat',
-		description: 'An Chat Overlay for OBS Studio.',
+		description: 'A customizable Twitch chat overlay for OBS Studio.',
 		longDescription:
-			'EagleChat is a chat overlay for OBS Studio that allows streamers to display their Twitch chat on their stream.',
+			'EagleChat is a real-time Twitch chat overlay for OBS Studio. Built for streamers, it provides a clean and highly customizable way to display chat on live broadcasts, enhancing audience interaction.',
 		tags: ['TypeScript'],
 		imageUrl: 'https://kappa.lol/_j8CzH',
-		github: '	https://github.com/prodbyeagle/eaglechat',
+		github: 'https://github.com/prodbyeagle/eaglechat',
 	},
+
 	{
 		id: 'meowrecorder',
 		title: 'MeowRecorder',
-		description: 'An Discord bot that records voice channels.',
+		description: 'A simple Discord bot that records voice channels.',
 		longDescription:
-			'EagleRecorder is a Discord bot that allows users to record voice channels and save the recordings for later use. It is designed to be easy to use and lightweight.',
+			'MeowRecorder is a lightweight Discord bot built to record voice channel conversations. It offers an intuitive command interface and supports saving recordings for later use—ideal for podcasting, meetings, or moderation.',
 		tags: ['TypeScript'],
 		github: 'https://github.com/prodbyeagle/MeowRecorder',
 	},
+
 	{
 		id: 'eaglelink',
 		title: 'EagleLink',
-		description: 'A small website for links.',
+		description:
+			'A minimalist, fast link-in-bio website built with Next.js.',
 		longDescription:
-			'EagleLink is a minimalist link-in-bio style website that showcases all my important links in one place. Built with performance and simplicity in mind using Next.js and Tailwind CSS.',
+			'EagleLink is a fast and minimal personal link hub, similar to Linktree. It’s built with Next.js and Tailwind CSS, optimized for performance and mobile responsiveness, and serves as a clean showcase for important links.',
 		tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
 		url: 'https://elink.vercel.app',
 		github: 'https://github.com/prodbyeagle/eagleLink',
 	},
+
 	{
 		id: 'eaglepowershell',
 		title: 'EaglePowershell',
-		description: 'A small Powershell script to install Vencord, Spicetify.',
+		description:
+			'Automates Vencord and Spicetify installation via PowerShell.',
 		longDescription:
-			'EaglePowershell is a collection of PowerShell scripts that automate the installation and configuration of Vencord and Spicetify. It simplifies the process of customizing Discord and Spotify.',
+			'EaglePowershell is a set of PowerShell scripts that streamline the setup of Vencord (Discord mod) and Spicetify (Spotify theming tool). It simplifies the installation and customization process with minimal user input.',
 		tags: ['Powershell'],
 		github: 'https://github.com/prodbyeagle/eaglepowershell',
 	},
+
 	{
 		id: 'chillyv2',
 		title: 'ChillyV2',
-		description: '2nd Generation of my first coding project, Chilly.',
+		description: 'A refined second version of my original coding project.',
 		longDescription:
-			'ChillyV2 is the second iteration of my first coding project. It features improved functionality and a more refined user experience compared to the original version.',
+			'ChillyV2 is the second-generation rewrite of my first software project, offering cleaner architecture, enhanced stability, and better user experience. It reflects my growth as a developer in terms of structure and code quality.',
 		tags: ['TypeScript'],
 		github: 'https://github.com/prodbyeagle/ChillyV2',
 	},
+
 	{
 		id: 'eaglenoise',
 		title: 'EagleNoise',
-		description: 'Create wallpapers easily with live-generating noise.',
+		description: 'Generate abstract, noise-based wallpapers in real time.',
 		longDescription:
-			'EagleNoise is a web application that generates beautiful noise-based wallpapers in real-time. Users can customize parameters like color, density, and pattern to create unique designs.',
+			'EagleNoise is a real-time generative art tool for creating noise-based wallpapers. Users can tweak parameters like colors, patterns, and density to instantly generate unique, high-resolution visuals.',
 		tags: ['Next.js', 'Tailwind CSS'],
 		url: 'https://eaglenoise.vercel.app',
 		github: 'https://github.com/prodbyeagle/eagleNoise',
