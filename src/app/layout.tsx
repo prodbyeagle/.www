@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Footer } from '@/components/footer';
+import { ThemeProvider } from 'next-themes';
 import { DottedBackground } from '@/components/dotted-background';
 import { ReactScan } from '@/components/react-scan';
 
@@ -40,7 +39,6 @@ export default function RootLayout({
 					</div>
 				</ThemeProvider>
 				<ReactScan />
-				<Footer />
 			</body>
 		</html>
 	);
