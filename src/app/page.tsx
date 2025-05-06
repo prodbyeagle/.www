@@ -1,12 +1,16 @@
+'use client';
+
 import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { PROJECTS } from '@/lib/projects';
 import Link from 'next/link';
-import * as motion from 'motion/react-client';
+import { motion } from 'motion/react';
 import { containerVariants } from '@/lib/animations/variants';
 import { WordReveal } from '@/components/word-reveal';
+import { BentoGridItem } from '@/components/ui/bento-grid-item';
+import { BentoGrid } from '@/components/ui/bento-grid';
 
 export default function Home() {
 	return (
@@ -33,84 +37,10 @@ export default function Home() {
 					</h2>
 					<div className='max-w-2xl space-y-4'>
 						<p className='leading-relaxed flex flex-wrap gap-x-1'>
-							<WordReveal text="I'm a passionate developer focused on modern web technologies, specializing in" />
-							<motion.span
-								initial={{
-									opacity: 0,
-									y: 10,
-									filter: 'blur(4px)',
-								}}
-								animate={{
-									opacity: 1,
-									y: 0,
-									filter: 'blur(0px)',
-								}}
-								transition={{
-									duration: 0.6,
-									delay: 0.6,
-									ease: [0.4, 0, 0.2, 1],
-								}}>
-								<Link
-									href='https://react.dev'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-[#61dafb]/80 hover:font-extrabold hover:text-lg transition-all hover:underline underline-offset-2'>
-									React
-								</Link>
-							</motion.span>
-							<WordReveal text=',' delay={0.7} />
-							<motion.span
-								initial={{
-									opacity: 0,
-									y: 10,
-									filter: 'blur(4px)',
-								}}
-								animate={{
-									opacity: 1,
-									y: 0,
-									filter: 'blur(0px)',
-								}}
-								transition={{
-									duration: 0.6,
-									delay: 0.75,
-									ease: [0.4, 0, 0.2, 1],
-								}}>
-								<Link
-									href='https://www.typescriptlang.org/'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-[#3178c6]/80 hover:font-extrabold hover:text-lg transition-all hover:underline underline-offset-2'>
-									TypeScript
-								</Link>
-							</motion.span>
-							<WordReveal text='and' delay={0.85} />
-							<motion.span
-								initial={{
-									opacity: 0,
-									y: 10,
-									filter: 'blur(4px)',
-								}}
-								animate={{
-									opacity: 1,
-									y: 0,
-									filter: 'blur(0px)',
-								}}
-								transition={{
-									duration: 0.6,
-									delay: 0.9,
-									ease: [0.4, 0, 0.2, 1],
-								}}>
-								<Link
-									href='https://nextjs.org/'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-accent-foreground hover:font-extrabold hover:text-lg transition-all hover:underline underline-offset-2'>
-									Next.js
-								</Link>
-							</motion.span>
 							<WordReveal
-								text='to create performant and user-friendly web applications.'
-								delay={1}
+								blur={9}
+								duration={2}
+								text="I'm a passionate developer focused on modern web technologies — specializing in React, TypeScript, and Next.js — to build performant, accessible, and user-friendly applications."
 							/>
 						</p>
 						<Link
@@ -132,11 +62,19 @@ export default function Home() {
 					<motion.div
 						variants={containerVariants}
 						initial='hidden'
-						animate='show'
-						className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-						{PROJECTS.map((project) => (
-							<ProjectCard key={project.id} project={project} />
-						))}
+						animate='show'>
+						<BentoGrid>
+							{PROJECTS.map((project, i) => (
+								<BentoGridItem
+									key={project.id}
+									index={i}
+									className={
+										i % 4 === 0 ? 'md:col-span-2' : ''
+									}>
+									<ProjectCard project={project} />
+								</BentoGridItem>
+							))}
+						</BentoGrid>
 					</motion.div>
 				</section>
 			</main>
