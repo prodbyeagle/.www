@@ -37,11 +37,7 @@ export default function Home() {
 					</h2>
 					<div className='max-w-2xl space-y-4'>
 						<p className='leading-relaxed flex flex-wrap gap-x-1'>
-							<WordReveal
-								blur={9}
-								duration={2}
-								text="I'm a passionate developer focused on modern web technologies — specializing in React, TypeScript, and Next.js — to build performant, accessible, and user-friendly applications."
-							/>
+							<WordReveal text='A passionate developer focused on modern web technologies — specializing in Next.js with TypeScript — to build performant, and user-friendly applications.' />
 						</p>
 						<Link
 							href='https://eaglelink.vercel.app/prodbyeagle'
