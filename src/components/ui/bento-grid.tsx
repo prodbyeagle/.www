@@ -10,7 +10,7 @@ export function BentoGrid({ className, children }: BentoGridProps) {
 		<div
 			key={generateRandomKey()}
 			className={cn(
-				'grid grid-cols-1 md:grid-cols-4 auto-rows-[14rem] gap-4',
+				'grid grid-cols-1 md:grid-cols-4 auto-rows-[14rem] gap-2',
 				className
 			)}>
 			{children}
