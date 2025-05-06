@@ -14,7 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 				<h3 className='text-2xl font-semibold text-foreground group-hover:text-primary transition-colors'>
 					<WordReveal text={project.projectTitle} />
 				</h3>
-				<p className='text-md text-muted-foreground line-clamp-3'>
+				<p className='text-base text-muted-foreground line-clamp-3'>
 					<WordReveal text={project.projectDescription} />
 				</p>
 
