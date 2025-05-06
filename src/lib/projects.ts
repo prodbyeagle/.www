@@ -16,7 +16,7 @@ export const PROJECTS: PortfolioProject[] = [
 			'A lightweight, framework-agnostic TypeScript library for extracting and formatting dominant colors from images.',
 		projectTags: ['TypeScript'],
 		projectUrl: 'https://prodbyeagle-color.vercel.app',
-		githubUrl: 'https://githubUrl.com/prodbyeagle/color',
+		githubUrl: 'https://github.com/prodbyeagle/color',
 	},
 
 	{
@@ -25,7 +25,7 @@ export const PROJECTS: PortfolioProject[] = [
 		projectDescription:
 			'A customizable Twitch chat overlay for OBS Studio.',
 		projectTags: ['TypeScript'],
-		githubUrl: 'https://githubUrl.com/prodbyeagle/eaglechat',
+		githubUrl: 'https://github.com/prodbyeagle/eaglechat',
 	},
 
 	{
@@ -33,7 +33,7 @@ export const PROJECTS: PortfolioProject[] = [
 		projectTitle: 'MeowRecorder',
 		projectDescription: 'A simple Discord bot that records voice channels.',
 		projectTags: ['TypeScript'],
-		githubUrl: 'https://githubUrl.com/prodbyeagle/MeowRecorder',
+		githubUrl: 'https://github.com/prodbyeagle/MeowRecorder',
 	},
 
 	{
@@ -42,7 +42,7 @@ export const PROJECTS: PortfolioProject[] = [
 		projectDescription:
 			'Automates Vencord and Spicetify installation via PowerShell.',
 		projectTags: ['Powershell'],
-		githubUrl: 'https://githubUrl.com/prodbyeagle/eaglepowershell',
+		githubUrl: 'https://github.com/prodbyeagle/eaglepowershell',
 	},
 
 	{
@@ -52,7 +52,7 @@ export const PROJECTS: PortfolioProject[] = [
 			'A minimalist, fast link-in-bio website built with Next.js.',
 		projectTags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
 		projectUrl: 'https://elink.vercel.app',
-		githubUrl: 'https://githubUrl.com/prodbyeagle/eagleLink',
+		githubUrl: 'https://github.com/prodbyeagle/eagleLink',
 	},
 
 	{
@@ -61,7 +61,7 @@ export const PROJECTS: PortfolioProject[] = [
 		projectDescription:
 			'A refined second version of my original coding project.',
 		projectTags: ['TypeScript'],
-		githubUrl: 'https://githubUrl.com/prodbyeagle/ChillyV2',
+		githubUrl: 'https://github.com/prodbyeagle/ChillyV2',
 	},
 
 	{
@@ -71,6 +71,6 @@ export const PROJECTS: PortfolioProject[] = [
 			'Generate abstract, noise-based wallpapers in real time.',
 		projectTags: ['Next.js', 'Tailwind CSS'],
 		projectUrl: 'https://eaglenoise.vercel.app',
-		githubUrl: 'https://githubUrl.com/prodbyeagle/eagleNoise',
+		githubUrl: 'https://github.com/prodbyeagle/eagleNoise',
 	},
 ];
