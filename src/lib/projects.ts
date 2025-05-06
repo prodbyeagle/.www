@@ -18,6 +18,7 @@ export const PROJECTS: Project[] = [
 		longDescription:
 			'@prodbyeagle/color is a minimal, framework-independent TypeScript library designed to extract dominant colors from images. It supports multiple color formats including RGB, HEX, HSL, and OKLCH—making it ideal for palette generation, UI theming, and creative tooling.',
 		tags: ['TypeScript'],
+		imageUrl: 'https://kappa.lol/Uz99AI',
 		url: 'https://prodbyeagle-color.vercel.app',
 		github: 'https://github.com/prodbyeagle/color',
 	},
@@ -44,18 +45,6 @@ export const PROJECTS: Project[] = [
 	},
 
 	{
-		id: 'eaglelink',
-		title: 'EagleLink',
-		description:
-			'A minimalist, fast link-in-bio website built with Next.js.',
-		longDescription:
-			'EagleLink is a fast and minimal personal link hub, similar to Linktree. It’s built with Next.js and Tailwind CSS, optimized for performance and mobile responsiveness, and serves as a clean showcase for important links.',
-		tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-		url: 'https://elink.vercel.app',
-		github: 'https://github.com/prodbyeagle/eagleLink',
-	},
-
-	{
 		id: 'eaglepowershell',
 		title: 'EaglePowershell',
 		description:
@@ -64,6 +53,19 @@ export const PROJECTS: Project[] = [
 			'EaglePowershell is a set of PowerShell scripts that streamline the setup of Vencord (Discord mod) and Spicetify (Spotify theming tool). It simplifies the installation and customization process with minimal user input.',
 		tags: ['Powershell'],
 		github: 'https://github.com/prodbyeagle/eaglepowershell',
+	},
+
+	{
+		id: 'eaglelink',
+		title: 'EagleLink',
+		description:
+			'A minimalist, fast link-in-bio website built with Next.js.',
+		longDescription:
+			'EagleLink is a fast and minimal personal link hub, similar to Linktree. It’s built with Next.js and Tailwind CSS, optimized for performance and mobile responsiveness, and serves as a clean showcase for important links.',
+		tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+		imageUrl: 'https://kappa.lol/xRywTu',
+		url: 'https://elink.vercel.app',
+		github: 'https://github.com/prodbyeagle/eagleLink',
 	},
 
 	{
