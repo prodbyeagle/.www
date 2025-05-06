@@ -20,8 +20,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<>
 			<Card
-				className='hover:border-border hover:scale-[1.03] transition-transform duration-100 cursor-pointer'
-				onClick={() => setIsDialogOpen(true)}>
+				onClick={() => setIsDialogOpen(true)}
+				className='cursor-pointer border transition-all duration-200 will-change-transform hover:scale-[1.015] hover:shadow-md hover:border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'>
 				<CardHeader>
 					<CardTitle>{project.title}</CardTitle>
 					<CardDescription>{project.description}</CardDescription>
