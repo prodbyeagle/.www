@@ -11,6 +11,7 @@ import { containerVariants } from '@/lib/animations/variants';
 import { WordReveal } from '@/components/word-reveal';
 import { BentoGridItem } from '@/components/ui/bento-grid-item';
 import { BentoGrid } from '@/components/ui/bento-grid';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
 	return (
@@ -35,6 +36,9 @@ export default function Home() {
 					<h2 className='text-xl font-medium mb-6 border-b pb-2 select-none'>
 						About Me
 					</h2>
+
+					<Separator className='my-6' />
+
 					<div className='max-w-2xl space-y-4'>
 						<p className='leading-relaxed flex flex-wrap gap-x-1'>
 							<WordReveal text='A passionate developer focused on modern web technologies — specializing in Next.js with TypeScript — to build performant, and user-friendly applications.' />
@@ -52,9 +56,10 @@ export default function Home() {
 				</section>
 
 				<section className='mb-16'>
-					<h2 className='text-xl font-medium mb-6 border-b pb-2 select-none'>
-						Newest Projects
-					</h2>
+					<h2 className='text-xl font-medium'>Projects</h2>
+
+					<Separator className='my-6' />
+
 					<motion.div
 						variants={containerVariants}
 						initial='hidden'
