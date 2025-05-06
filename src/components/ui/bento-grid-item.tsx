@@ -1,16 +1,17 @@
-import { cn, generateRandomKey } from '@/lib/utils';
+import { cn } from '@/lib/utils';
+import type { ReactNode } from 'react';
 
 interface BentoGridItemProps {
 	className?: string;
-	children: React.ReactNode;
+	children: ReactNode;
+	index?: number;
 }
 
 export function BentoGridItem({ className, children }: BentoGridItemProps) {
 	return (
 		<div
-			key={generateRandomKey()}
 			className={cn(
-				'rounded-3xl border border-border bg-background p-6 shadow-sm transition-all hover:shadow-md hover:scale-[1.015]',
+				'rounded-4xl border border-border/70 bg-background p-6 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md ',
 				className
 			)}>
 			{children}
