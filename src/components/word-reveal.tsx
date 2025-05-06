@@ -41,7 +41,7 @@ export function WordReveal({
 					}}
 					transition={{
 						duration,
-						delay: delay + i * 0.05,
+						delay: delay + i * 0.1,
 						ease: [0.4, 0, 0.2, 1],
 					}}>
 					{word}
