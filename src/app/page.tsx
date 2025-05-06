@@ -66,8 +66,7 @@ export default function Home() {
 						<BentoGrid>
 							{PROJECTS.map((project, i) => (
 								<BentoGridItem
-									key={project.id}
-									index={i}
+									key={project.projectId}
 									className={
 										i % 4 === 0 ? 'md:col-span-2' : ''
 									}>
