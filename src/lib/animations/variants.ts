@@ -11,10 +11,9 @@ export const containerVariants: Variants = {
 };
 
 export const cardVariants: Variants = {
-	hidden: { opacity: 0, y: 20 },
+	hidden: { opacity: 0 },
 	show: (i: number) => ({
 		opacity: 1,
-		y: 0,
 		transition: {
 			duration: 0.4,
 			delay: i * 0.2,
