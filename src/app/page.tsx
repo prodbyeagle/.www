@@ -2,21 +2,22 @@
 
 import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { ThemeToggle } from '@/components/eagle/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { PROJECTS } from '@/lib/projects';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { containerVariants } from '@/lib/animations/variants';
 import { WordReveal } from '@/components/word-reveal';
-import { BentoGridItem } from '@/components/ui/bento-grid-item';
-import { BentoGrid } from '@/components/ui/bento-grid';
+import { BentoGridItem } from '@/components/bento-grid-item';
+import { BentoGrid } from '@/components/bento-grid';
 import { Separator } from '@/components/ui/separator';
+import { generateRandomKey } from '@/lib/utils';
 
 export default function Home() {
 	return (
-		<div className='min-h-screen text-foreground'>
-			<div className='absolute top-4 right-4'>
+		<div>
+			<div className='absolute top-8 right-8'>
 				<ThemeToggle />
 			</div>
 
@@ -33,15 +34,13 @@ export default function Home() {
 
 			<main className='px-6 md:px-12 lg:px-24 pb-24'>
 				<section className='mb-16'>
-					<h2 className='text-xl font-medium mb-6 border-b pb-2 select-none'>
-						About Me
-					</h2>
+					<h2 className='text-xl font-medium'>about_me</h2>
 
 					<Separator className='my-6' />
 
 					<div className='max-w-2xl space-y-4'>
 						<p className='leading-relaxed flex flex-wrap gap-x-1'>
-							<WordReveal text='A passionate developer focused on modern web technologies — specializing in Next.js with TypeScript — to build performant, and user-friendly applications.' />
+							<WordReveal text='a passionate developer focused on modern web technologies — specializing in next.js with typescript — to build performant, and user-friendly applications.' />
 						</p>
 						<Link
 							href='https://eaglelink.vercel.app/prodbyeagle'
@@ -56,7 +55,7 @@ export default function Home() {
 				</section>
 
 				<section className='mb-16'>
-					<h2 className='text-xl font-medium'>Projects</h2>
+					<h2 className='text-xl font-medium'>projects</h2>
 
 					<Separator className='my-6' />
 
@@ -67,7 +66,7 @@ export default function Home() {
 						<BentoGrid>
 							{PROJECTS.map((project, i) => (
 								<BentoGridItem
-									key={project.projectId}
+									key={generateRandomKey()}
 									className={
 										i % 4 === 0 ? 'md:col-span-2' : ''
 									}>
