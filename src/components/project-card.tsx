@@ -1,9 +1,8 @@
-'use client';
-
 import type { PortfolioProject } from '@/lib/projects';
 import { Github, ExternalLink } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { WordReveal } from './word-reveal';
+import Link from 'next/link';
 
 interface ProjectCardProps {
 	project: PortfolioProject;
@@ -34,24 +33,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
 			{(project.githubUrl || project.projectUrl) && (
 				<div className='absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
 					{project.githubUrl && (
-						<a
+						<Link
 							href={project.githubUrl}
-							onClick={(e) => e.stopPropagation()}
 							target='_blank'
 							rel='noopener noreferrer'
 							aria-label='GitHub'>
 							<Github className='size-4 duration-200 text-muted-foreground hover:text-foreground' />
-						</a>
+						</Link>
 					)}
 					{project.projectUrl && (
-						<a
+						<Link
 							href={project.projectUrl}
-							onClick={(e) => e.stopPropagation()}
 							target='_blank'
 							rel='noopener noreferrer'
 							aria-label='External Link'>
 							<ExternalLink className='size-4 duration-200 text-muted-foreground hover:text-foreground' />
-						</a>
+						</Link>
 					)}
 				</div>
 			)}
