@@ -3,7 +3,6 @@ export interface PortfolioProject {
 	projectDescription: string;
 	projectTags: string[];
 	projectUrl?: string;
-	projectIcon?: string;
 	githubUrl?: string;
 }
 
@@ -18,8 +17,7 @@ export const PROJECTS: PortfolioProject[] = [
 	},
 	{
 		projectTitle: 'chat',
-		projectDescription:
-			'a customizable twitch chat overlay for obs studio.',
+		projectDescription: 'a customizable twitch chat overlay for obs.',
 		projectTags: ['typescript'],
 		githubUrl: 'https://github.com/prodbyeagle/chat',
 	},
@@ -44,10 +42,9 @@ export const PROJECTS: PortfolioProject[] = [
 		githubUrl: 'https://github.com/prodbyeagle/link',
 	},
 	{
-		projectTitle: 'chilly',
-		projectDescription:
-			'a refined second version of my original coding project.',
-		projectTags: ['typescript'],
-		githubUrl: 'https://github.com/prodbyeagle/ChillyV2',
+		projectTitle: 'www',
+		projectDescription: 'my portfolio. you are here.',
+		projectTags: ['next.js', 'typescript', 'tailwind'],
+		githubUrl: 'https://github.com/prodbyeagle/www',
 	},
 ];
