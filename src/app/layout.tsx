@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
-import { DottedBackground } from '@/components/dotted-background';
-import { ReactScan } from '@/components/react-scan';
+import { ReactScan } from '@/components/eagle/react-scan';
+import { DottedBackground } from '@/components/eagle/dotted';
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
