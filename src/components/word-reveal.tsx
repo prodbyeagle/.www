@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'motion/react';
+import * as motion from 'motion/react-client';
 import type { HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
