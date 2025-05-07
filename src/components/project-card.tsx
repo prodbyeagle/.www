@@ -11,7 +11,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<div className='group relative cursor-default flex flex-col justify-between h-full shadow-input transition-all duration-200 overflow-hidden rounded-md'>
 			<div className='flex flex-col gap-1 p-4'>
-				<h3 className='text-2xl font-semibold text-foreground group-hover:text-primary transition-colors'>
+				<h3 className='text-2xl font-semibold text-foreground'>
 					<WordReveal text={project.projectTitle} />
 				</h3>
 				<p className='text-base text-muted-foreground line-clamp-3'>
@@ -22,7 +22,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 					<div className='flex flex-wrap gap-1 mt-3'>
 						{project.projectTags.slice(0, 4).map((tag) => (
 							<Badge variant='outline' key={tag}>
-								@{tag}
+								{tag}
 							</Badge>
 						))}
 					</div>

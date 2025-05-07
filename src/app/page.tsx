@@ -21,7 +21,7 @@ export default function Home() {
 				<ThemeToggle />
 			</div>
 
-			<header className='pt-16 pb-8 px-6 md:px-12 lg:px-24'>
+			<header className='mt-14 pb-8 px-6 md:px-12 lg:px-24'>
 				<div className='flex items-center gap-4'>
 					<h1 className='text-2xl md:text-3xl font-bold select-none'>
 						<WordReveal text='prodbyeagle' />
@@ -33,11 +33,7 @@ export default function Home() {
 			</header>
 
 			<main className='px-6 md:px-12 lg:px-24 pb-24'>
-				<section className='mb-16'>
-					<h2 className='text-xl font-medium'>about_me</h2>
-
-					<Separator className='my-6' />
-
+				<section className='mb-8'>
 					<div className='max-w-2xl space-y-4'>
 						<p className='leading-relaxed flex flex-wrap gap-x-1'>
 							<WordReveal text='a passionate developer focused on modern web technologies — specializing in next.js with typescript — to build performant, and user-friendly applications.' />
@@ -47,9 +43,7 @@ export default function Home() {
 							target='_blank'
 							rel='noopener noreferrer'
 							aria-label='Visit my EagleLink profile'>
-							<Button variant='outline' size='sm'>
-								My Links
-							</Button>
+							<Button variant='ghost'>my socials</Button>
 						</Link>
 					</div>
 				</section>

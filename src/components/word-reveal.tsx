@@ -7,15 +7,11 @@ import { cn } from '@/lib/utils';
 interface WordRevealProps extends HTMLAttributes<HTMLSpanElement> {
 	text: string;
 	delay?: number;
-	duration?: number;
-	blur?: number;
 }
 
 export function WordReveal({
 	text,
 	delay = 0,
-	duration = 0.6,
-	blur = 4,
 	className,
 	...props
 }: WordRevealProps) {
@@ -32,7 +28,7 @@ export function WordReveal({
 					initial={{
 						opacity: 0,
 						y: 10,
-						filter: `blur(${blur}px)`,
+						filter: 'blur(6px)',
 					}}
 					animate={{
 						opacity: 1,
@@ -40,8 +36,8 @@ export function WordReveal({
 						filter: 'blur(0px)',
 					}}
 					transition={{
-						duration,
-						delay: delay + i * 0.1,
+						duration: 0.8,
+						delay: delay + i * 0.2,
 						ease: [0.4, 0, 0.2, 1],
 					}}>
 					{word}
