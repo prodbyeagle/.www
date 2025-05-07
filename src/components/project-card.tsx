@@ -22,7 +22,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 					<div className='flex flex-wrap gap-1 mt-3'>
 						{project.projectTags.slice(0, 4).map((tag) => (
 							<Badge variant='outline' key={tag}>
-								{tag}
+								@{tag}
 							</Badge>
 						))}
 					</div>
