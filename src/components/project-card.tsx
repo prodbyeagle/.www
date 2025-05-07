@@ -1,3 +1,5 @@
+'use client';
+
 import type { PortfolioProject } from '@/lib/projects';
 import { Github, ExternalLink } from 'lucide-react';
 import { Badge } from './ui/badge';

@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import { ReactScan } from '@/components/eagle/react-scan';
 import { DottedBackground } from '@/components/eagle/dotted';
+import { ThemeToggle } from '@/components/eagle/theme-toggle';
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
@@ -25,6 +26,10 @@ export default function RootLayout({
 		<html lang='en' suppressHydrationWarning>
 			<body
 				className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-text`}>
+				<div className='absolute top-4 right-4'>
+					<ThemeToggle />
+				</div>
+
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'

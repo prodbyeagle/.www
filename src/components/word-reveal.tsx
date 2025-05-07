@@ -9,18 +9,11 @@ interface WordRevealProps extends HTMLAttributes<HTMLSpanElement> {
 	delay?: number;
 }
 
-export function WordReveal({
-	text,
-	delay = 0,
-	className,
-	...props
-}: WordRevealProps) {
+export function WordReveal({ text, delay = 0, ...props }: WordRevealProps) {
 	const words = text.split(' ');
 
 	return (
-		<span
-			className={cn('inline-block overflow-hidden', className)}
-			{...props}>
+		<span className={cn('inline-block overflow-hidden')} {...props}>
 			{words.map((word, i) => (
 				<motion.span
 					key={`${word}-${i}`}
