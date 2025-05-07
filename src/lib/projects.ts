@@ -1,5 +1,4 @@
 export interface PortfolioProject {
-	projectId: string;
 	projectTitle: string;
 	projectDescription: string;
 	projectTags: string[];
@@ -10,67 +9,45 @@ export interface PortfolioProject {
 
 export const PROJECTS: PortfolioProject[] = [
 	{
-		projectId: 'color',
-		projectTitle: '@prodbyeagle/color',
+		projectTitle: 'color',
 		projectDescription:
-			'A lightweight, framework-agnostic TypeScript library for extracting and formatting dominant colors from images.',
-		projectTags: ['TypeScript'],
+			'a lightweight, framework-agnostic typescript library for extracting and formatting dominant colors from images.',
+		projectTags: ['typescript'],
 		projectUrl: 'https://prodbyeagle-color.vercel.app',
 		githubUrl: 'https://github.com/prodbyeagle/color',
 	},
-
 	{
-		projectId: 'eaglechat',
-		projectTitle: 'EagleChat',
+		projectTitle: 'chat',
 		projectDescription:
-			'A customizable Twitch chat overlay for OBS Studio.',
-		projectTags: ['TypeScript'],
-		githubUrl: 'https://github.com/prodbyeagle/eaglechat',
+			'a customizable twitch chat overlay for obs studio.',
+		projectTags: ['typescript'],
+		githubUrl: 'https://github.com/prodbyeagle/chat',
 	},
-
 	{
-		projectId: 'meowrecorder',
-		projectTitle: 'MeowRecorder',
-		projectDescription: 'A simple Discord bot that records voice channels.',
-		projectTags: ['TypeScript'],
-		githubUrl: 'https://github.com/prodbyeagle/MeowRecorder',
+		projectTitle: 'meow',
+		projectDescription: 'a simple discord bot that records voice channels.',
+		projectTags: ['typescript'],
+		githubUrl: 'https://github.com/prodbyeagle/meow',
 	},
-
 	{
-		projectId: 'eaglepowershell',
-		projectTitle: 'EaglePowershell',
+		projectTitle: 'eagle',
+		projectDescription: 'adds powerful commands to powershell.',
+		projectTags: ['powershell'],
+		githubUrl: 'https://github.com/prodbyeagle/eagle',
+	},
+	{
+		projectTitle: 'link',
 		projectDescription:
-			'Automates Vencord and Spicetify installation via PowerShell.',
-		projectTags: ['Powershell'],
-		githubUrl: 'https://github.com/prodbyeagle/eaglepowershell',
-	},
-
-	{
-		projectId: 'eaglelink',
-		projectTitle: 'EagleLink',
-		projectDescription:
-			'A minimalist, fast link-in-bio website built with Next.js.',
-		projectTags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+			'a minimalist, fast link-in-bio website built with next.js.',
+		projectTags: ['next.js', 'typescript', 'tailwind'],
 		projectUrl: 'https://elink.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/eagleLink',
+		githubUrl: 'https://github.com/prodbyeagle/link',
 	},
-
 	{
-		projectId: 'chillyv2',
-		projectTitle: 'ChillyV2',
+		projectTitle: 'chilly',
 		projectDescription:
-			'A refined second version of my original coding project.',
-		projectTags: ['TypeScript'],
+			'a refined second version of my original coding project.',
+		projectTags: ['typescript'],
 		githubUrl: 'https://github.com/prodbyeagle/ChillyV2',
-	},
-
-	{
-		projectId: 'eaglenoise',
-		projectTitle: 'EagleNoise',
-		projectDescription:
-			'Generate abstract, noise-based wallpapers in real time.',
-		projectTags: ['Next.js', 'Tailwind CSS'],
-		projectUrl: 'https://eaglenoise.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/eagleNoise',
 	},
 ];
