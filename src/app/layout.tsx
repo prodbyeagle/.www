@@ -28,14 +28,14 @@ export default function RootLayout({
 		<html lang='en' suppressHydrationWarning>
 			<body
 				className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-none`}>
-				<div className='absolute top-4 right-4'>
-					<ThemeToggle />
-				</div>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
 					enableSystem>
 					<div className='container mx-auto'>
+						<div className='absolute top-4 right-4'>
+							<ThemeToggle />
+						</div>
 						<DottedBackground
 							dotColor='var(--ring)'
 							spacing={14}

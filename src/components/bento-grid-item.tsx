@@ -11,7 +11,7 @@ export function BentoGridItem({ className, children }: BentoGridItemProps) {
 	return (
 		<div
 			className={cn(
-				'rounded-none border border-border/70 bg-background p-6 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md ',
+				'rounded-none border border-border/70 bg-background p-6 transition-all duration-100 dark:hover:border-accent not-dark:hover:shadow-md',
 				className
 			)}>
 			{children}
