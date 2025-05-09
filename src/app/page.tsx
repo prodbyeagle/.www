@@ -11,8 +11,8 @@ import { generateRandomKey } from '@/lib/utils';
 
 export default function Home() {
 	return (
-		<div>
-			<header className='mt-14 pb-8 px-6 md:px-12 lg:px-24'>
+		<div className='pt-14'>
+			<header className='pb-8 px-6 md:px-12 lg:px-24'>
 				<div className='flex items-center gap-4'>
 					<h1 className='text-2xl md:text-3xl font-bold select-none'>
 						<WordReveal text='prodbyeagle' />
@@ -27,6 +27,7 @@ export default function Home() {
 				<section className='mb-8'>
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
+							speed={0.06}
 							className='text-muted-foreground'
 							text='a passionate developer focused on modern web technologies — specializing in next.js with typescript — to build performant, and user-friendly applications.'
 						/>
