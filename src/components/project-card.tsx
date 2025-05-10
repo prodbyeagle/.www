@@ -1,11 +1,13 @@
-import type { PortfolioProject } from '@/lib/projects';
-import { Github, ExternalLink } from 'lucide-react';
-import { Badge } from './ui/badge';
-import { WordReveal } from './word-reveal';
+import { ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
 
+import type { IProject } from '@/lib/projects';
+
+import { Badge } from './ui/badge';
+import { WordReveal } from './word-reveal';
+
 interface ProjectCardProps {
-	project: PortfolioProject;
+	project: IProject;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {

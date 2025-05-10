@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn, generateRandomKey } from '@/lib/utils';
 
 export type CodeProps = React.HTMLAttributes<HTMLElement>;
 
@@ -11,6 +11,7 @@ export type CodeProps = React.HTMLAttributes<HTMLElement>;
 export function Code({ className, ...props }: CodeProps) {
 	return (
 		<code
+			key={generateRandomKey()}
 			className={cn(
 				'rounded bg-muted px-1 py-0.5 font-mono text-sm',
 				'text-accent-foreground/70 transition-all duration-300',

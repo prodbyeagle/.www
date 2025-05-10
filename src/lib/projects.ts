@@ -1,12 +1,13 @@
-export interface PortfolioProject {
+export interface IProject {
 	projectTitle: string;
 	projectDescription: string;
 	projectTags: string[];
 	projectUrl?: string;
+	projectType?: 'active' | 'discontinued';
 	githubUrl?: string;
 }
 
-export const PROJECTS: PortfolioProject[] = [
+export const PROJECTS: IProject[] = [
 	{
 		projectTitle: 'color',
 		projectDescription:
@@ -19,6 +20,7 @@ export const PROJECTS: PortfolioProject[] = [
 		projectTitle: 'chat',
 		projectDescription: 'a customizable twitch chat overlay for obs.',
 		projectTags: ['typescript'],
+		projectType: 'discontinued',
 		githubUrl: 'https://github.com/prodbyeagle/chat',
 	},
 	{

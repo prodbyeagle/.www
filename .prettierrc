@@ -1,0 +1,24 @@
+{
+	"semi": true,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"tabWidth": 4,
+	"useTabs": true,
+	"bracketSpacing": true,
+	"jsxSingleQuote": true,
+	"bracketSameLine": true,
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		"",
+		"^@/app/(.*)$",
+		"",
+		"^@/components/(.*)$",
+		"",
+		"^@/lib/(.*)$",
+		"",
+		"^@/types/(.*)$",
+		"",
+		"^[./]"
+	],
+	"plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}

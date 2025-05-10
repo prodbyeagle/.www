@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
+import { Geist_Mono } from 'next/font/google';
 
 import './globals.css';
 
-import { ReactScan } from '@/components/eagle/react-scan';
 import { DottedBackground } from '@/components/eagle/dotted';
+import { ReactScan } from '@/components/eagle/react-scan';
 import { ThemeToggle } from '@/components/eagle/theme-toggle';
 
 const geistMono = Geist_Mono({

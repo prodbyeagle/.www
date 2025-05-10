@@ -1,7 +1,10 @@
 'use client';
 
 import NumberFlow, { NumberFlowGroup } from '@number-flow/react';
+import * as React from 'react';
 import { useEffect, useState } from 'react';
+
+import { generateRandomKey } from '@/lib/utils';
 
 export function Clock() {
 	const [hours, setHours] = useState(0);
@@ -24,7 +27,7 @@ export function Clock() {
 	}, []);
 
 	return (
-		<NumberFlowGroup>
+		<NumberFlowGroup key={generateRandomKey()}>
 			<div>
 				<NumberFlow
 					value={hours}

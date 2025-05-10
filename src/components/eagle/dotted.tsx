@@ -2,7 +2,7 @@
 
 import type React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn, generateRandomKey } from '@/lib/utils';
 
 interface DottedBackgroundProps {
 	dotColor?: string;
@@ -19,6 +19,7 @@ export function DottedBackground({
 }: DottedBackgroundProps = {}) {
 	return (
 		<div
+			key={generateRandomKey()}
 			className={cn('absolute inset-0 -z-10 h-full w-full', className)}
 			aria-hidden='true'>
 			<div

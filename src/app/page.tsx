@@ -1,12 +1,14 @@
+import * as motion from 'motion/react-client';
+
+import { BentoGrid } from '@/components/bento-grid';
+import { BentoGridItem } from '@/components/bento-grid-item';
 import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
-import { PROJECTS } from '@/lib/projects';
-import * as motion from 'motion/react-client';
-import { containerVariants } from '@/lib/animations/variants';
-import { WordReveal } from '@/components/word-reveal';
-import { BentoGridItem } from '@/components/bento-grid-item';
-import { BentoGrid } from '@/components/bento-grid';
 import { Separator } from '@/components/ui/separator';
+import { WordReveal } from '@/components/word-reveal';
+
+import { containerVariants } from '@/lib/animations/variants';
+import { PROJECTS } from '@/lib/projects';
 import { generateRandomKey } from '@/lib/utils';
 
 export default function Home() {
@@ -27,7 +29,7 @@ export default function Home() {
 				<section className='mb-8'>
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
-							speed={0.06}
+							speed={0.05}
 							className='text-muted-foreground'
 							text='a passionate developer focused on modern web technologies — specializing in next.js with typescript — to build performant, and user-friendly applications.'
 						/>
