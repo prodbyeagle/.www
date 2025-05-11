@@ -3,7 +3,7 @@ export interface IProject {
 	projectDescription: string;
 	projectTags: string[];
 	projectUrl?: string;
-	projectType?: 'active' | 'discontinued';
+	discontinued?: boolean;
 	githubUrl?: string;
 }
 
@@ -20,13 +20,13 @@ export const PROJECTS: IProject[] = [
 		projectTitle: 'chat',
 		projectDescription: 'a customizable twitch chat overlay for obs.',
 		projectTags: ['typescript'],
-		projectType: 'discontinued',
 		githubUrl: 'https://github.com/prodbyeagle/chat',
 	},
 	{
 		projectTitle: 'meow',
 		projectDescription: 'a simple discord bot that records voice channels.',
 		projectTags: ['typescript'],
+		discontinued: true,
 		githubUrl: 'https://github.com/prodbyeagle/meow',
 	},
 	{
@@ -41,6 +41,7 @@ export const PROJECTS: IProject[] = [
 			'a minimalist, fast link-in-bio website built with next.js.',
 		projectTags: ['next.js', 'typescript', 'tailwind'],
 		projectUrl: 'https://elink.vercel.app',
+		discontinued: true,
 		githubUrl: 'https://github.com/prodbyeagle/link',
 	},
 	{
