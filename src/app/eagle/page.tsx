@@ -1,6 +1,8 @@
 'use client';
 
+import { Home } from 'lucide-react';
 import * as motion from 'motion/react-client';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { Code } from '@/components/eagle/code';
@@ -35,29 +37,33 @@ export default function EaglePage() {
 
 	return (
 		<div className='min-h-screen flex flex-col'>
-			<a
-				href='https://github.com/prodbyeagle/eagle'
-				target='_blank'
-				rel='noopener noreferrer'
-				className='fixed bottom-6 right-6 z-50'
-				aria-label='View on GitHub'>
-				<Button
-					variant='outline'
-					size='icon'
-					className='rounded-md shadow-lg size-10'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 24 24'
-						fill='currentColor'
-						className='size-5'>
-						<path
-							fillRule='evenodd'
-							d='M12 2C6.477 2 2 6.484 2 12.012c0 4.42 2.867 8.166 6.839 9.489.5.09.683-.217.683-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.089.637-1.34-2.221-.253-4.555-1.112-4.555-4.944 0-1.092.39-1.986 1.03-2.685-.104-.254-.446-1.273.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.706.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.545 1.377.203 2.396.1 2.65.64.699 1.028 1.593 1.028 2.685 0 3.842-2.337 4.688-4.566 4.936.359.31.678.922.678 1.858 0 1.34-.012 2.419-.012 2.748 0 .268.18.577.688.479A10.013 10.013 0 0 0 22 12.012C22 6.484 17.523 2 12 2Z'
-							clipRule='evenodd'
-						/>
-					</svg>
-				</Button>
-			</a>
+			<div className='fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end'>
+				<a
+					href='https://github.com/prodbyeagle/eagle'
+					target='_blank'
+					rel='noopener noreferrer'
+					aria-label='View on GitHub'>
+					<Button variant='ghost' size='icon'>
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 24 24'
+							fill='currentColor'
+							className='size-5'>
+							<path
+								fillRule='evenodd'
+								d='M12 2C6.477 2 2 6.484 2 12.012c0 4.42 2.867 8.166 6.839 9.489.5.09.683-.217.683-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.089.637-1.34-2.221-.253-4.555-1.112-4.555-4.944 0-1.092.39-1.986 1.03-2.685-.104-.254-.446-1.273.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.706.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.545 1.377.203 2.396.1 2.65.64.699 1.028 1.593 1.028 2.685 0 3.842-2.337 4.688-4.566 4.936.359.31.678.922.678 1.858 0 1.34-.012 2.419-.012 2.748 0 .268.18.577.688.479A10.013 10.013 0 0 0 22 12.012C22 6.484 17.523 2 12 2Z'
+								clipRule='evenodd'
+							/>
+						</svg>
+					</Button>
+				</a>
+
+				<Link href='/' aria-label='Go Back to Main Page'>
+					<Button variant='ghost' size='icon'>
+						<Home className='size-5' />
+					</Button>
+				</Link>
+			</div>
 
 			<section className='relative pt-24 px-6 md:px-12 lg:px-24'>
 				<div className='absolute inset-0 -z-10' />
