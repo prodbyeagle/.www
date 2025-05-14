@@ -1,13 +1,9 @@
-import * as motion from 'motion/react-client';
-
 import { BentoGrid } from '@/components/bento-grid';
 import { BentoGridItem } from '@/components/bento-grid-item';
-import { Clock } from '@/components/clock';
 import { ProjectCard } from '@/components/project-card';
 import { Separator } from '@/components/ui/separator';
 import { WordReveal } from '@/components/word-reveal';
 
-import { containerVariants } from '@/lib/animations/variants';
 import { PROJECTS } from '@/lib/projects';
 import { generateRandomKey } from '@/lib/utils';
 
@@ -19,9 +15,6 @@ export default function Home() {
 					<h1 className='text-2xl md:text-3xl font-bold select-none'>
 						<WordReveal text='prodbyeagle' />
 					</h1>
-					<div className='font-mono items-baseline text-lg'>
-						<Clock />
-					</div>
 				</div>
 			</header>
 
@@ -31,7 +24,7 @@ export default function Home() {
 						<WordReveal
 							speed={0.05}
 							className='text-muted-foreground'
-							text='a passionate developer focused on modern web technologies — specializing in next.js with typescript — to build performant, and user-friendly applications.'
+							text='a passionate developer focused on modern web technologies specializing in next.js with typescript to build performant, and user-friendly applications.'
 						/>
 					</div>
 				</section>
@@ -41,22 +34,15 @@ export default function Home() {
 
 					<Separator className='my-6' />
 
-					<motion.div
-						variants={containerVariants}
-						initial='hidden'
-						animate='show'>
-						<BentoGrid>
-							{PROJECTS.map((project, i) => (
-								<BentoGridItem
-									key={generateRandomKey()}
-									className={
-										i % 4 === 0 ? 'md:col-span-2' : ''
-									}>
-									<ProjectCard project={project} />
-								</BentoGridItem>
-							))}
-						</BentoGrid>
-					</motion.div>
+					<BentoGrid>
+						{PROJECTS.map((project, i) => (
+							<BentoGridItem
+								key={generateRandomKey()}
+								className={i % 4 === 0 ? 'md:col-span-2' : ''}>
+								<ProjectCard project={project} />
+							</BentoGridItem>
+						))}
+					</BentoGrid>
 				</section>
 			</main>
 		</div>
