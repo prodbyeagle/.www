@@ -4,12 +4,6 @@ import Link from 'next/link';
 import type { IProject } from '@/lib/projects';
 
 import { Badge } from './ui/badge';
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from './ui/tooltip';
 import { WordReveal } from './word-reveal';
 
 interface ProjectCardProps {
@@ -17,36 +11,11 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-	const isDiscontinued = project.discontinued;
-
 	return (
 		<div className='group relative cursor-default flex flex-col justify-between h-full shadow-input transition-all duration-200 overflow-hidden rounded-md'>
 			<div className='flex flex-col gap-1 p-4'>
 				<h3 className='text-2xl font-semibold text-foreground'>
-					{isDiscontinued ? (
-						<TooltipProvider>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<span>
-										<WordReveal
-											text={project.projectTitle}
-											className='line-through text-muted-foreground/60 italic cursor-help'
-										/>
-									</span>
-								</TooltipTrigger>
-								<TooltipContent side='top'>
-									<span className='text-xs'>
-										This project is maintained occasionally
-										and may receive infrequent updates.
-										Please keep this in mind when using the
-										tool or site.
-									</span>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					) : (
-						<WordReveal text={project.projectTitle} />
-					)}
+					<WordReveal text={project.projectTitle} />
 				</h3>
 				<p className='text-base text-muted-foreground line-clamp-3'>
 					<WordReveal text={project.projectDescription} />

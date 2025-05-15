@@ -1,11 +1,9 @@
-export type ProjectTypes = 'discontinued' | 'inactive' | 'active';
-
 export interface IProject {
 	projectTitle: string;
 	projectDescription: string;
 	projectTags: string[];
 	projectUrl?: string;
-	projectType?: ProjectTypes;
+	projectType?: 'discontinued' | 'inactive' | 'active';
 	githubUrl?: string;
 }
 
