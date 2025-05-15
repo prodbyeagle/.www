@@ -1,9 +1,11 @@
+export type ProjectTypes = 'discontinued' | 'inactive' | 'active';
+
 export interface IProject {
 	projectTitle: string;
 	projectDescription: string;
 	projectTags: string[];
 	projectUrl?: string;
-	discontinued?: boolean;
+	projectType?: ProjectTypes;
 	githubUrl?: string;
 }
 
@@ -13,6 +15,7 @@ export const PROJECTS: IProject[] = [
 		projectDescription:
 			'a lightweight, framework-agnostic typescript library for extracting and formatting dominant colors from images.',
 		projectTags: ['typescript'],
+		projectType: 'inactive',
 		projectUrl: 'https://prodbyeagle-color.vercel.app',
 		githubUrl: 'https://github.com/prodbyeagle/color',
 	},
@@ -20,13 +23,14 @@ export const PROJECTS: IProject[] = [
 		projectTitle: 'chat',
 		projectDescription: 'a customizable twitch chat overlay for obs.',
 		projectTags: ['typescript'],
+		projectType: 'discontinued',
 		githubUrl: 'https://github.com/prodbyeagle/chat',
 	},
 	{
 		projectTitle: 'meow',
 		projectDescription: 'a simple discord bot that records voice channels.',
 		projectTags: ['typescript'],
-		discontinued: true,
+		projectType: 'discontinued',
 		githubUrl: 'https://github.com/prodbyeagle/meow',
 	},
 	{
@@ -42,7 +46,7 @@ export const PROJECTS: IProject[] = [
 			'a minimalist, fast link-in-bio website built with next.js.',
 		projectTags: ['next.js', 'typescript', 'tailwind'],
 		projectUrl: 'https://elink.vercel.app',
-		discontinued: true,
+		projectType: 'discontinued',
 		githubUrl: 'https://github.com/prodbyeagle/link',
 	},
 	{

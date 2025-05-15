@@ -10,13 +10,14 @@ export function CommandRow({
 	description,
 }: CommandRowProps) {
 	return (
-		<div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-border last:border-0 last:pb-0'>
+		<div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 bg-background/25 p-2 rounded-xl'>
 			<div className='flex flex-wrap gap-2 items-center'>
-				<span className='bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-mono'>
+				<span className='bg-primary/10 hover:bg-primary/15 duration-200 text-primary px-3 py-1 rounded-md text-sm'>
 					{command}
 				</span>
+				<span className='text-sm italic'>or</span>
 				{alternateCommand && (
-					<span className='bg-muted text-muted-foreground px-3 py-1 rounded-md text-sm font-mono'>
+					<span className='bg-muted hover:bg-primary/5 duration-200 text-muted-foreground px-3 py-1 rounded-md text-sm'>
 						{alternateCommand}
 					</span>
 				)}

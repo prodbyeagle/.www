@@ -22,6 +22,18 @@ export const cardVariants: Variants = {
 	}),
 };
 
+export const fadeIn: Variants = {
+	hidden: { opacity: 0 },
+	show: (i: number = 0) => ({
+		opacity: 1,
+		transition: {
+			delay: i * 0.3,
+			duration: 0.5,
+			ease: [0.25, 0.1, 0.25, 1.0],
+		},
+	}),
+};
+
 export const fadeUp: Variants = {
 	hidden: { opacity: 0, y: 20 },
 	show: (i: number = 0) => ({

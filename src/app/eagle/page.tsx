@@ -1,11 +1,9 @@
 'use client';
 
-import { Home } from 'lucide-react';
+import { Github, Home, Terminal } from 'lucide-react';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
-import { useState } from 'react';
 
-import { Code } from '@/components/eagle/code';
 import { Button } from '@/components/ui/button';
 import {
 	Card,
@@ -14,66 +12,50 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WordReveal } from '@/components/word-reveal';
 
 import { fadeUp } from '@/lib/animations/variants';
 
 import { CommandRow } from './components/command-row';
+import { CopyInstallCommand } from './components/copy-install';
 
 export default function EaglePage() {
-	const [copied, setCopied] = useState(false);
-
 	const installCommand = `Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/prodbyeagle/eaglePowerShell/main/installer.ps1 | Invoke-Expression`;
 
-	const handleCopy = async () => {
-		try {
-			await navigator.clipboard.writeText(installCommand);
-			setCopied(true);
-			setTimeout(() => setCopied(false), 2000);
-		} catch (err) {
-			console.error('Copy failed:', err);
-		}
-	};
-
 	return (
-		<div className='min-h-screen flex flex-col'>
+		<div className='min-h-screen flex flex-col relative overflow-hidden'>
 			<div className='fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end'>
 				<a
 					href='https://github.com/prodbyeagle/eagle'
 					target='_blank'
 					rel='noopener noreferrer'
 					aria-label='View on GitHub'>
-					<Button variant='ghost' size='icon'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 24 24'
-							fill='currentColor'
-							className='size-5'>
-							<path
-								fillRule='evenodd'
-								d='M12 2C6.477 2 2 6.484 2 12.012c0 4.42 2.867 8.166 6.839 9.489.5.09.683-.217.683-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.089.637-1.34-2.221-.253-4.555-1.112-4.555-4.944 0-1.092.39-1.986 1.03-2.685-.104-.254-.446-1.273.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.706.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.545 1.377.203 2.396.1 2.65.64.699 1.028 1.593 1.028 2.685 0 3.842-2.337 4.688-4.566 4.936.359.31.678.922.678 1.858 0 1.34-.012 2.419-.012 2.748 0 .268.18.577.688.479A10.013 10.013 0 0 0 22 12.012C22 6.484 17.523 2 12 2Z'
-								clipRule='evenodd'
-							/>
-						</svg>
+					<Button
+						variant='secondary'
+						size='icon'
+						className='shadow-md hover:shadow-lg transition-all'>
+						<Github className='size-4' />
 					</Button>
 				</a>
 
 				<Link href='/' aria-label='Go Back to Main Page'>
-					<Button variant='ghost' size='icon'>
-						<Home className='size-5' />
+					<Button
+						variant='secondary'
+						size='icon'
+						className='shadow-md hover:shadow-lg transition-all'>
+						<Home className='size-4' />
 					</Button>
 				</Link>
 			</div>
 
-			<section className='relative pt-24 px-6 md:px-12 lg:px-24'>
-				<div className='absolute inset-0 -z-10' />
-
+			<section className='relative pt-24 pb-10 px-6 md:px-12 lg:px-24'>
 				<motion.div
 					className='max-w-5xl mx-auto text-center'
 					variants={fadeUp}
 					initial='hidden'
 					animate='show'>
-					<h1 className='text-4xl md:text-6xl font-bold tracking-tight'>
+					<h1 className='text-3xl md:text-5xl lg:text-6xl font-semibold'>
 						<WordReveal duration={2} text='eagle' />
 					</h1>
 
@@ -82,64 +64,67 @@ export default function EaglePage() {
 							position='left'
 							duration={1}
 							speed={0.1}
-							text='A lightweight PowerShell utility to supercharge your workflow with automated scripting for Spicetify, Vencord, and more.'
+							text='A lightweight PowerShell utility to supercharge your workflow with automated scripting.'
 						/>
 					</p>
 				</motion.div>
 			</section>
 
-			<section className='py-16 md:py-24 px-6 md:px-12 lg:px-24'>
+			<section className='py-16 px-6 md:px-12 lg:px-24 bg-muted/10 backdrop-blur-sm rounded-4xl'>
 				<div className='max-w-4xl mx-auto'>
 					<motion.div
-						className='text-center mb-12'
+						className='text-center mb-8'
 						variants={fadeUp}
 						initial='hidden'
 						animate='show'>
+						<div className='inline-flex items-center justify-center mb-4'>
+							<div className='size-12 rounded-lg bg-primary/5 flex items-center justify-center'>
+								<Terminal className='size-6 text-primary' />
+							</div>
+						</div>
 						<h2 className='text-3xl md:text-4xl font-bold'>
 							Quick Installation
 						</h2>
-						<p className='mt-4 text-xl text-muted-foreground'>
-							Get up and running in seconds
+						<p className='mt-3 text-muted-foreground'>
+							Set up in seconds with a single PowerShell command
 						</p>
 					</motion.div>
 
 					<motion.div
 						className='relative'
 						initial='hidden'
+						variants={fadeUp}
 						animate='show'>
-						<div className='relative bg-card rounded-lg border p-1'>
-							<div className='bg-muted rounded-md p-2 overflow-auto text-sm'>
-								<Code>{installCommand}</Code>
-							</div>
-							<div className='flex justify-end pt-1'>
-								<Button
-									variant='ghost'
-									size='sm'
-									className='gap-2 w-full'
-									onClick={handleCopy}
-									aria-label='Copy install command'>
-									<span>
-										{copied ? '✅ Copied!' : 'Copy!'}
-									</span>
-								</Button>
-							</div>
-						</div>
+						<CopyInstallCommand command={installCommand} />
+						<p className='text-sm text-muted-foreground mt-6 text-center'>
+							Need help? Check out the{' '}
+							<a
+								href='#'
+								className='text-primary hover:underline'>
+								installation guide
+							</a>
+						</p>
 					</motion.div>
 				</div>
 			</section>
 
-			<section className='px-6 pb-16 md:px-12 lg:px-24'>
+			<section className='py-16 mt-18 px-6 md:px-12 lg:px-24 bg-muted/10 backdrop-blur-sm rounded-4xl'>
 				<div className='max-w-4xl mx-auto'>
 					<motion.div
-						className='text-center mb-12'
+						className='text-center mb-8'
 						variants={fadeUp}
 						initial='hidden'
 						animate='show'>
+						<div className='inline-flex items-center justify-center mb-4'>
+							<div className='size-12 rounded-lg bg-primary/5 flex items-center justify-center'>
+								<Terminal className='size-6 text-primary' />
+							</div>
+						</div>
 						<h2 className='text-3xl md:text-4xl font-bold'>
-							Simple to Use
+							Available Commands
 						</h2>
-						<p className='mt-4 text-xl text-muted-foreground'>
-							Intuitive commands for everyday tasks
+						<p className='mt-3 text-muted-foreground'>
+							Everything you need to manage your tools
 						</p>
 					</motion.div>
 
@@ -148,50 +133,88 @@ export default function EaglePage() {
 						variants={fadeUp}
 						initial='hidden'
 						animate='show'>
-						<Card>
-							<CardHeader>
-								<CardTitle>All Commands (v2.6.4)</CardTitle>
-								<CardDescription>
-									Get started with all commands
-								</CardDescription>
-							</CardHeader>
-							<CardContent className='space-y-4'>
-								<CommandRow
-									command='eagle help'
-									alternateCommand='eagle --h'
-									description='Display help and available commands of eagle'
-								/>
-								<CommandRow
-									command='eagle update'
-									alternateCommand='eagle --u'
-									description='Check for and install updates'
-								/>
-								<CommandRow
-									command='eagle version'
-									alternateCommand='eagle --v'
-									description='Displays the current version of eagle'
-								/>
-								<CommandRow
-									command='eagle spicetify'
-									alternateCommand='eagle --s'
-									description='Install or Update Spicetify'
-								/>
-								<CommandRow
-									command='eagle vencord'
-									alternateCommand='eagle --ven'
-									description='Run or Install Vencord'
-								/>
-
-								<CommandRow
-									command='eagle uninstall'
-									alternateCommand='eagle --rem'
-									description='Removes eagle'
-								/>
-							</CardContent>
-						</Card>
+						<Tabs defaultValue='core' className='w-full'>
+							<TabsList className='grid w-full grid-cols-2'>
+								<TabsTrigger value='core'>
+									Core Commands
+								</TabsTrigger>
+								<TabsTrigger value='tools'>
+									Tool Management
+								</TabsTrigger>
+							</TabsList>
+							<TabsContent value='core' className='mt-6'>
+								<Card>
+									<CardHeader className='pb-2'>
+										<CardTitle>Core Commands</CardTitle>
+										<CardDescription>
+											Essential commands for eagle
+											management
+										</CardDescription>
+									</CardHeader>
+									<CardContent className='space-y-4 pt-2'>
+										<CommandRow
+											command='eagle help'
+											alternateCommand='eagle --h'
+											description='Display help and available commands'
+										/>
+										<CommandRow
+											command='eagle update'
+											alternateCommand='eagle --u'
+											description='Check for and install updates'
+										/>
+										<CommandRow
+											command='eagle version'
+											alternateCommand='eagle --v'
+											description='Display the current version'
+										/>
+										<CommandRow
+											command='eagle uninstall'
+											alternateCommand='eagle --rem'
+											description='Remove eagle completely'
+										/>
+									</CardContent>
+								</Card>
+							</TabsContent>
+							<TabsContent value='tools' className='mt-6'>
+								<Card>
+									<CardHeader className='pb-2'>
+										<CardTitle>Tool Management</CardTitle>
+										<CardDescription>
+											Commands for managing external tools
+										</CardDescription>
+									</CardHeader>
+									<CardContent className='space-y-4 pt-2'>
+										<CommandRow
+											command='eagle spicetify'
+											alternateCommand='eagle --s'
+											description='Install or update Spicetify'
+										/>
+										<CommandRow
+											command='eagle vencord'
+											alternateCommand='eagle --ven'
+											description='Run or install Vencord'
+										/>
+									</CardContent>
+								</Card>
+							</TabsContent>
+						</Tabs>
 					</motion.div>
 				</div>
 			</section>
+
+			<footer className='mt-auto py-10 border-t'>
+				<div className='max-w-4xl mx-auto px-6 md:px-12 lg:px-24 text-center'>
+					<p className='text-sm text-muted-foreground'>
+						Created with{' '}
+						<span className='animate-caret-blink'>❤️</span> by{' '}
+						<Link
+							href='https://github.com/prodbyeagle'
+							className='text-primary hover:font-black duration-300 hover:underline'>
+							prodbyeagle
+						</Link>
+					</p>
+				</div>
+			</footer>
 		</div>
 	);
 }

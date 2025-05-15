@@ -32,14 +32,14 @@ export function WordReveal({
 	const getInitialOffset = () => {
 		switch (position) {
 			case 'bottom':
-				return { y: -10 };
+				return { y: -15 };
 			case 'left':
-				return { x: 10 };
+				return { x: 15 };
 			case 'right':
-				return { x: -10 };
+				return { x: -15 };
 			case 'top':
 			default:
-				return { y: 10 };
+				return { y: 15 };
 		}
 	};
 
