@@ -4,9 +4,9 @@ export interface IProject {
 	projectTags: string[];
 	projectUrl?: string;
 	projectType?: 'discontinued' | 'inactive' | 'active';
+	isNew?: boolean;
 	githubUrl?: string;
 }
-
 export const PROJECTS: IProject[] = [
 	{
 		projectTitle: 'color',
@@ -37,6 +37,15 @@ export const PROJECTS: IProject[] = [
 		projectTags: ['powershell'],
 		githubUrl: 'https://github.com/prodbyeagle/eagle',
 		projectUrl: '/eagle',
+	},
+	{
+		projectTitle: 'cord',
+		projectDescription:
+			'a modded version of vencord, adding small features and changes.',
+		projectTags: ['typescript', 'electron'],
+		projectType: 'active',
+		isNew: true,
+		githubUrl: 'https://github.com/prodbyeagle/cord',
 	},
 	{
 		projectTitle: 'link',
