@@ -27,20 +27,26 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-none`}>
+				className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-none relative`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
 					enableSystem>
-					<div className='container mx-auto'>
-						<div className='absolute top-4 right-4'>
+					<div className='sticky top-4 z-50 w-full px-4 flex justify-end pointer-events-none'>
+						<div className='pointer-events-auto'>
 							<ThemeToggle />
 						</div>
+					</div>
+
+					<div className='fixed inset-0 -z-10'>
 						<DottedBackground
 							dotColor='var(--ring)'
 							spacing={14}
 							dotSize={1}
 						/>
+					</div>
+
+					<div className='container mx-auto relative z-0'>
 						{children}
 					</div>
 				</ThemeProvider>
