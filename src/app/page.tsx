@@ -37,7 +37,6 @@ export default function Home() {
 					<BentoGrid>
 						{PROJECTS.map((project, i) => (
 							<BentoGridItem
-								projectData={project}
 								key={generateRandomKey()}
 								className={i % 4 === 0 ? 'md:col-span-2' : ''}>
 								<ProjectCard project={project} />
