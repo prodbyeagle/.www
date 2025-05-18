@@ -12,8 +12,8 @@ export default function Home() {
 		<div className='pt-14'>
 			<header className='pb-8 px-6 md:px-12 lg:px-24'>
 				<div className='flex items-center gap-4'>
-					<h1 className='text-2xl md:text-3xl font-bold select-none'>
-						<WordReveal text='prodbyeagle' />
+					<h1 className='text-4xl md:text-5xl font-bold select-none'>
+						<WordReveal duration={2} text='prodbyeagle' />
 					</h1>
 				</div>
 			</header>
@@ -23,7 +23,7 @@ export default function Home() {
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
 							speed={0.05}
-							className='text-muted-foreground'
+							className='text-text-secondary'
 							text='a passionate developer focused on modern web technologies specializing in next.js with typescript to build performant, and user-friendly applications.'
 						/>
 					</div>

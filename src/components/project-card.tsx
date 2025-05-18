@@ -14,10 +14,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<div className='group relative cursor-default flex flex-col justify-between h-full shadow-input transition-all duration-200 overflow-hidden rounded-md'>
 			<div className='flex flex-col gap-1 p-4'>
-				<h3 className='text-2xl font-semibold text-foreground'>
+				<h3 className='text-2xl font-semibold'>
 					<WordReveal text={project.projectTitle} />
 				</h3>
-				<p className='text-base text-muted-foreground line-clamp-3'>
+				<p className='text-base text-text-secondary line-clamp-3'>
 					<WordReveal text={project.projectDescription} />
 				</p>
 
