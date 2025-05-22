@@ -8,7 +8,7 @@ export default function NotFound() {
 		<div className='min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24'>
 			<div className='w-full max-w-2xl space-y-12 text-center'>
 				<header>
-					<h1 className='text-4xl md:text-5xl font-bold select-none tracking-tight'>
+					<h1 className='text-4xl md:text-5xl font-bold tracking-tight'>
 						<WordReveal
 							text='404 - Page Not Found'
 							speed={0.04}
