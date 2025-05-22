@@ -31,7 +31,6 @@ export const PROJECTS: IProject[] = [
 		projectDescription: 'adds powerful commands to powershell.',
 		projectTags: ['powershell'],
 		githubUrl: 'https://github.com/prodbyeagle/eagle',
-		projectUrl: '/eagle',
 	},
 	{
 		projectTitle: 'cord',
