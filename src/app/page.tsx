@@ -12,8 +12,8 @@ export default function Home() {
 		<div className='pt-14'>
 			<header className='pb-8 px-6 md:px-12 lg:px-24'>
 				<div className='flex items-center gap-4'>
-					<h1 className='text-4xl md:text-5xl font-bold select-none'>
-						<WordReveal duration={2} text='prodbyeagle' />
+					<h1 className='text-3xl md:text-4xl font-bold select-none'>
+						<WordReveal duration={1} text='eagle' />
 					</h1>
 				</div>
 			</header>
@@ -30,7 +30,7 @@ export default function Home() {
 				</section>
 
 				<section className='mb-16'>
-					<h2 className='text-xl font-medium'>projects</h2>
+					<h2 className='text-xl font-medium'>active projects</h2>
 
 					<Separator className='my-6' />
 
