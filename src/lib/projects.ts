@@ -1,56 +1,52 @@
-export interface IProject {
-	projectTitle: string;
-	projectDescription: string;
-	projectTags: string[];
-	projectUrl?: string;
-	githubUrl?: string;
-}
-export const PROJECTS: IProject[] = [
+import { Project } from '@/types';
+
+export const PROJECTS: Project[] = [
+	//* discontinued projects. will maybe add an option to show discontinued projects on the website.
+	// {
+	// 	title: 'color',
+	// 	description:
+	// 		'a lightweight, framework-agnostic typescript library for extracting and formatting dominant colors from images.',
+	// 	tags: ['typescript'],
+	// 	url: 'https://prodbyeagle-color.vercel.app',
+	// 	githubUrl: 'https://github.com/prodbyeagle/color',
+	// },
+	// {
+	// 	title: 'chat',
+	// 	description: 'a customizable twitch chat overlay for obs.',
+	// 	tags: ['typescript'],
+	// 	githubUrl: 'https://github.com/prodbyeagle/chat',
+	// },
+	// {
+	// 	title: 'meow',
+	// 	description: 'a simple discord bot that records voice channels.',
+	// 	tags: ['typescript'],
+	// 	githubUrl: 'https://github.com/prodbyeagle/meow',
+	// },
+	// {
+	// 	title: 'link',
+	// 	description:
+	// 		'a minimalist, fast link-in-bio website built with next.js.',
+	// 	tags: ['next.js', 'typescript', 'tailwind'],
+	// 	url: 'https://elink.vercel.app',
+	// 	githubUrl: 'https://github.com/prodbyeagle/link',
+	// },
 	{
-		projectTitle: 'color',
-		projectDescription:
-			'a lightweight, framework-agnostic typescript library for extracting and formatting dominant colors from images.',
-		projectTags: ['typescript'],
-		projectUrl: 'https://prodbyeagle-color.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/color',
-	},
-	{
-		projectTitle: 'chat',
-		projectDescription: 'a customizable twitch chat overlay for obs.',
-		projectTags: ['typescript'],
-		githubUrl: 'https://github.com/prodbyeagle/chat',
-	},
-	{
-		projectTitle: 'meow',
-		projectDescription: 'a simple discord bot that records voice channels.',
-		projectTags: ['typescript'],
-		githubUrl: 'https://github.com/prodbyeagle/meow',
-	},
-	{
-		projectTitle: 'eagle',
-		projectDescription: 'adds powerful commands to powershell.',
-		projectTags: ['powershell'],
-		githubUrl: 'https://github.com/prodbyeagle/eagle',
-	},
-	{
-		projectTitle: 'cord',
-		projectDescription:
+		title: 'cord',
+		description:
 			'a modded version of vencord, adding small features and changes.',
-		projectTags: ['typescript', 'electron'],
+		tags: ['typescript', 'electron'],
 		githubUrl: 'https://github.com/prodbyeagle/cord',
 	},
 	{
-		projectTitle: 'link',
-		projectDescription:
-			'a minimalist, fast link-in-bio website built with next.js.',
-		projectTags: ['next.js', 'typescript', 'tailwind'],
-		projectUrl: 'https://elink.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/link',
+		title: 'eagle',
+		description: 'adds powerful commands to powershell.',
+		tags: ['powershell'],
+		githubUrl: 'https://github.com/prodbyeagle/eagle',
 	},
 	{
-		projectTitle: 'www',
-		projectDescription: 'my portfolio. you are here.',
-		projectTags: ['next.js', 'typescript', 'tailwind'],
+		title: 'www',
+		description: 'my portfolio. you are here.',
+		tags: ['next.js', 'typescript', 'tailwind'],
 		githubUrl: 'https://github.com/prodbyeagle/www',
 	},
 ];
