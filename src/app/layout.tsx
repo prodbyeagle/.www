@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Geist_Mono } from 'next/font/google';
 
@@ -8,18 +8,10 @@ import { DottedBackground } from '@/components/eagle/dotted';
 import { ReactScan } from '@/components/eagle/react-scan';
 import { ThemeToggle } from '@/components/eagle/theme-toggle';
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-});
-
 export const metadata: Metadata = {
-	title: {
-		default: 'prodbyeagle',
-		template: '%s | prodbyeagle',
-	},
+	title: 'eagle',
 	description:
-		'Explore creative projects, experiments, and tools by @prodbyeagle — pushing the limits of frontend design and interaction.',
+		'a passionate developer building performant, accessible, and modern web experiences.',
 	icons: {
 		icon: {
 			url: 'https://kappa.lol/WTiY5',
@@ -30,29 +22,25 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'prodbyeagle',
 		description:
-			'Explore creative projects, experiments, and tools by @prodbyeagle — pushing the limits of frontend design and interaction.',
+			'a passionate developer building performant, accessible, and modern web experiences.',
 		url: 'https://prodbyeagle.vercel.app',
 		siteName: 'prodbyeagle',
-		images: [
-			{
-				url: 'https://kappa.lol/WTiY5',
-				width: 512,
-				height: 512,
-				alt: 'prodbyeagle logo',
-			},
-		],
 		locale: 'en_US',
 		type: 'website',
 	},
 	twitter: {
-		card: 'summary_large_image',
+		card: 'summary',
 		title: 'prodbyeagle',
 		description:
-			'Explore creative projects, experiments, and tools by @prodbyeagle — pushing the limits of frontend design and interaction.',
-		creator: '@prodbyeagle',
-		images: ['https://kappa.lol/WTiY5'],
+			'a passionate developer building performant, accessible, and modern web experiences.',
+		creator: 'prodbyeagle',
 	},
 };
+
+const geistMono = Geist_Mono({
+	variable: '--font-geist-mono',
+	subsets: ['latin'],
+});
 
 export default function RootLayout({
 	children,
