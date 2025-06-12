@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 	icons: {
 		icon: {
 			url: 'https://kappa.lol/WTiY5',
-			type: 'image/png',
+			type: 'image/gif',
 		},
 	},
 	metadataBase: new URL('https://prodbyeagle.vercel.app'),
