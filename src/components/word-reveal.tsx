@@ -1,7 +1,7 @@
 import * as motion from 'motion/react-client';
 import type { HTMLAttributes } from 'react';
 
-import { cn, generateRandomKey } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 /**
  * Animation direction for word entrance.
@@ -72,7 +72,7 @@ export function WordReveal({
 		<span className={cn('inline-block overflow-hidden')} {...props}>
 			{words.map((word, i) => (
 				<motion.span
-					key={generateRandomKey()}
+					key={`${word}-${i}`}
 					className='inline-block pr-3'
 					initial={{
 						opacity: 0,
