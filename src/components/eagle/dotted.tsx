@@ -1,9 +1,31 @@
-'use client';
-
-import type { DottedBackgroundProps } from '@/types';
 import type React from 'react';
 
 import { cn } from '@/lib/utils';
+
+export interface DottedBackgroundProps {
+	/**
+	 * The color of each dot.
+	 * @default 'var(--muted-foreground)'
+	 */
+	dotColor?: string;
+
+	/**
+	 * The radius size of each dot in pixels.
+	 * @default 1
+	 */
+	dotSize?: number;
+
+	/**
+	 * The spacing between dots in pixels.
+	 * @default 30
+	 */
+	spacing?: number;
+
+	/**
+	 * Additional class names to apply to the root container.
+	 */
+	className?: string;
+}
 
 /**
  * A decorative background component that renders a grid of evenly spaced dots.
