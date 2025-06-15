@@ -29,9 +29,9 @@ export default function Home() {
 							onMouseEnter={() => setHovered(true)}
 							onMouseLeave={() => setHovered(false)}
 							letter
-							position='left'
-							speed={hovered ? 0.05 : 0.25}
-							text={hovered ? 'p r o d b y e a g l e.' : '.eagle'}
+							position='bottom'
+							speed={hovered ? 0.15 : 0.25}
+							text={hovered ? 'prodbyeagle.' : '.eagle'}
 						/>
 					</h1>
 				</div>
