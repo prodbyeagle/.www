@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { toast } from 'sonner';
 
 import { BentoGrid } from '@/components/bento-grid';
 import { BentoGridItem } from '@/components/bento-grid-item';
@@ -15,18 +14,7 @@ import { PROJECTS } from '@/lib/projects';
 
 export default function Home() {
 	const [showDeprecated, setShowDeprecated] = useState(false);
-	const [clickCount, setClickCount] = useState(0);
-
-	function handleClick() {
-		setClickCount((prev) => {
-			const next = prev + 1;
-			if (next === 10) {
-				toast.success('🪶 you found the eagle egg');
-				return 0;
-			}
-			return next;
-		});
-	}
+	const [hovered, setHovered] = useState(false);
 
 	const filteredProjects = PROJECTS.filter(
 		(project) => showDeprecated || !project.deprecated
@@ -36,10 +24,15 @@ export default function Home() {
 		<div className='pt-14'>
 			<header className='pb-8 px-6 md:px-12 lg:px-24'>
 				<div className='flex items-center gap-4'>
-					<h1
-						onClick={handleClick}
-						className='text-3xl md:text-4xl font-bold select-none'>
-						<WordReveal duration={1} text='.eagle' />
+					<h1 className='text-3xl md:text-4xl font-bold'>
+						<WordReveal
+							onMouseEnter={() => setHovered(true)}
+							onMouseLeave={() => setHovered(false)}
+							letter
+							position='left'
+							speed={hovered ? 0.05 : 0.25}
+							text={hovered ? 'p r o d b y e a g l e.' : '.eagle'}
+						/>
 					</h1>
 				</div>
 			</header>
@@ -48,9 +41,9 @@ export default function Home() {
 				<section className='mb-8'>
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
-							speed={0.05}
+							speed={0.01}
 							className='text-text-secondary'
-							text='a frontend developer and music producer passionate about crafting fast, accessible web experiences with next.js, typeScript, and modern ui tools.'
+							text='a hobby frontend developer and music producer passionate about crafting fast, accessible web experiences and modern tools.'
 						/>
 					</div>
 				</section>
@@ -61,7 +54,7 @@ export default function Home() {
 
 						<div className='flex items-center gap-2'>
 							<Label htmlFor='toggle-deprecated'>
-								Show deprecated
+								show deprecated projects
 							</Label>
 							<Switch
 								id='toggle-deprecated'
