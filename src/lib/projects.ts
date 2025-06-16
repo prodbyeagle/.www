@@ -36,6 +36,12 @@ export const PROJECTS: Project[] = [
 		deprecated: true,
 	},
 	{
+		title: 'vencord-www',
+		description: 'the website for the modded "eagleCord". which is .cord',
+		tags: ['next.js'],
+		url: 'https://eaglecord.vercel.app',
+	},
+	{
 		title: '.cord',
 		description:
 			'a modded version of vencord, adding small features and changes.',
