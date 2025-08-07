@@ -28,10 +28,14 @@ export default function Home() {
 						<WordReveal
 							onMouseEnter={() => setHovered(true)}
 							onMouseLeave={() => setHovered(false)}
-							letter
+							letter={hovered ? true : false}
 							position='bottom'
-							speed={hovered ? 0.15 : 0.25}
-							text={hovered ? 'prodbyeagle.' : '.eagle'}
+							speed={hovered ? 0.15 : 0.1}
+							text={
+								hovered
+									? 'prodbyeagle.'
+									: 'hello, my name is noah ( eagle )'
+							}
 						/>
 					</h1>
 				</div>
@@ -42,8 +46,8 @@ export default function Home() {
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
 							speed={0.01}
-							className='text-text-secondary'
-							text='a hobby frontend developer and music producer passionate about crafting fast, accessible web experiences and modern tools.'
+							className='text-foreground'
+							text='a hobby frontend developer and music producer passionate about crafting fast, accessible web experiences.'
 						/>
 					</div>
 				</section>

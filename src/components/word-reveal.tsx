@@ -76,7 +76,7 @@ export function WordReveal({
 			{words.map((word, i) => (
 				<motion.span
 					key={`${word}-${i}`}
-					className='inline-block pr-3'
+					className='inline-block pr-1'
 					initial={{
 						opacity: 0,
 						...getInitialOffset(),

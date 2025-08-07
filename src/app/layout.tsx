@@ -1,6 +1,6 @@
 import { type Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
-import { Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
 import './globals.css';
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 		'a passionate developer building performant, accessible, and modern web experiences.',
 	icons: {
 		icon: {
-			url: 'https://kappa.lol/WTiY5',
+			url: 'https://cdn.discordapp.com/emojis/1385016033831555233.gif',
 			type: 'image/gif',
 		},
 	},
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 	},
 };
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
+const font = Inter({
+	variable: '--font-sans',
 	subsets: ['latin'],
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-none relative`}>
+				className={`${font.variable} antialiased font-sans tracking-tight cursor-default select-none relative`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'

@@ -1,8 +1,13 @@
 import { Project } from '@/types';
 
 export const PROJECTS: Project[] = [
-	//* discontinued projects. will maybe add an option to show discontinued projects on the website.
-	//? deprecated doesnt have to mean that im no longer working on it. it can get updates rarely.
+	//note: deprecated doesnt have to mean that im no longer working on it. it can get updates rarely.
+	{
+		title: 'mythic-minerals',
+		description: 'an minecraft mod that adds new ores.',
+		tags: ['java'],
+		githubUrl: 'https://github.com/meowlounge/MythicMinerals',
+	},
 	{
 		title: 'color',
 		description:
@@ -36,17 +41,17 @@ export const PROJECTS: Project[] = [
 		deprecated: true,
 	},
 	{
-		title: 'vencord-www',
-		description: 'the website for the modded "eagleCord". which is .cord',
+		title: 'eaglecord-website',
+		description: 'the website for the modded "eagleCord"',
 		tags: ['next.js'],
 		url: 'https://eaglecord.vercel.app',
 	},
 	{
-		title: '.cord',
+		title: 'eaglecord',
 		description:
 			'a modded version of vencord, adding small features and changes.',
 		tags: ['typescript', 'electron'],
-		githubUrl: 'https://github.com/prodbyeagle/.cord',
+		githubUrl: 'https://github.com/prodbyeagle/eagleCord',
 	},
 	{
 		title: '.eagle',
