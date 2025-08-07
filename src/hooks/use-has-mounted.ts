@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 /**
- * React hook to determine if the component has been mounted on the client.
+ * Detects whether the component is mounted on the client side.
+ * Returns `false` during SSR and `true` after hydration.
  *
- * This is useful for preventing hydration mismatches in Next.js applications
- * by delaying rendering of client-only logic until after the component mounts.
- *
- * @returns {boolean} `true` if the component has mounted on the client, otherwise `false`.
+ * @returns {boolean} `true` on client, `false` on server
  *
  * @example
  * ```tsx
@@ -14,15 +12,14 @@ import { useEffect, useState } from 'react';
  * if (!hasMounted) return null;
  * return <ClientOnlyComponent />;
  * ```
- *
- * @author prodbyeagle
  */
 export function useHasMounted(): boolean {
-	const [hasMounted, setHasMounted] = useState(false);
-
-	useEffect(() => {
-		setHasMounted(true);
-	}, []);
-
-	return hasMounted;
+	return useSyncExternalStore(
+		// subscribe: no-op since the mounted state never changes after hydration
+		() => () => {},
+		// snapshot on client
+		() => true,
+		// snapshot on server
+		() => false
+	);
 }

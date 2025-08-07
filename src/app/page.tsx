@@ -1,14 +1,16 @@
 'use client';
 
+import {
+	BentoGrid,
+	BentoGridItem,
+	ProjectCard,
+	WordReveal,
+} from '@/components';
 import { useState } from 'react';
 
-import { BentoGrid } from '@/components/bento-grid';
-import { BentoGridItem } from '@/components/bento-grid-item';
-import { ProjectCard } from '@/components/project-card';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
-import { WordReveal } from '@/components/word-reveal';
 
 import { PROJECTS } from '@/lib/projects';
 

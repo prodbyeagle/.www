@@ -1,7 +1,7 @@
+import { WordReveal } from '@/components';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import { WordReveal } from '@/components/word-reveal';
 
 export default function NotFound() {
 	return (

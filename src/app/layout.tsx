@@ -1,12 +1,11 @@
 import { type Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
 
-import { DottedBackground } from '@/components/eagle/dotted';
-import { ReactScan } from '@/components/eagle/react-scan';
-import { ThemeToggle } from '@/components/eagle/theme-toggle';
+import { ReactScan } from '@/components';
+
+import { Gradient } from '@/components/mesh-gradient';
 
 export const metadata: Metadata = {
 	title: 'eagle',
@@ -50,29 +49,21 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${font.variable} antialiased font-sans tracking-tight cursor-default select-none relative`}>
-				<ThemeProvider
-					attribute='class'
-					defaultTheme='system'
-					enableSystem>
-					<div className='sticky top-4 z-50 w-full px-4 flex justify-end pointer-events-none'>
-						<div className='pointer-events-auto'>
-							<ThemeToggle />
-						</div>
-					</div>
+				className={`${font.variable} antialiased font-sans tracking-tight cursor-default select-none relative dark`}>
+				<div className='fixed inset-0 -z-10 opacity-50'>
+					<Gradient
+						colors={[
+							'#ca9bee',
+							'#8b64a8',
+							'#523868',
+							'#4f2c74',
+							'#ff6f61',
+							'#ffcc00',
+						]}
+					/>
+				</div>
 
-					<div className='fixed inset-0 -z-10'>
-						<DottedBackground
-							dotColor='var(--ring)'
-							spacing={28}
-							dotSize={2}
-						/>
-					</div>
-
-					<div className='container mx-auto relative z-0'>
-						{children}
-					</div>
-				</ThemeProvider>
+				<div className='container mx-auto relative z-0'>{children}</div>
 				<ReactScan />
 			</body>
 		</html>
