@@ -1,67 +1,78 @@
 import { Project } from '@/types';
 
 export const PROJECTS: Project[] = [
-	//note: deprecated doesnt have to mean that im no longer working on it. it can get updates rarely.
+	{
+		title: 'eagle-utils',
+		description: 'server plugin with utility modules for private servers.',
+		tags: ['java'],
+	},
 	{
 		title: 'mythic-minerals',
-		description: 'an minecraft mod that adds new ores.',
+		description: 'minecraft mod that adds many new ores.',
 		tags: ['java'],
-		githubUrl: 'https://github.com/meowlounge/MythicMinerals',
 	},
-	{
-		title: 'color',
-		description:
-			'a lightweight, framework-agnostic typescript library for extracting and formatting dominant colors from images.',
-		tags: ['typescript'],
-		url: 'https://prodbyeagle-color.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/color',
-		deprecated: true,
-	},
-	{
-		title: 'chat',
-		description: 'a customizable twitch chat overlay for obs.',
-		tags: ['typescript'],
-		githubUrl: 'https://github.com/prodbyeagle/chat',
-		deprecated: true,
-	},
-	{
-		title: 'meow',
-		description: 'a simple discord bot that records voice channels.',
-		tags: ['typescript'],
-		githubUrl: 'https://github.com/prodbyeagle/meow',
-		deprecated: true,
-	},
-	{
-		title: 'link',
-		description:
-			'a minimalist, fast link-in-bio website built with next.js.',
-		tags: ['next.js', 'typescript', 'tailwind'],
-		url: 'https://elink.vercel.app',
-		githubUrl: 'https://github.com/prodbyeagle/link',
-		deprecated: true,
-	},
-	{
-		title: 'eaglecord-website',
-		description: 'the website for the modded "eagleCord"',
-		tags: ['next.js'],
-		url: 'https://eaglecord.vercel.app',
-	},
+
+	// {
+	// 	title: 'color',
+	// 	description: 'TypeScript library to extract and format dominant image colors.',
+	// 	tags: ['typescript'],
+	// 	url: 'https://prodbyeagle-color.vercel.app',
+	// 	githubUrl: 'https://github.com/prodbyeagle/color',
+	// 	deprecated: true,
+	// },
+	// {
+	// 	title: 'chat',
+	// 	description: 'Customizable Twitch chat overlay for OBS.',
+	// 	tags: ['typescript'],
+	// 	githubUrl: 'https://github.com/prodbyeagle/chat',
+	// 	deprecated: true,
+	// },
+	// {
+	// 	title: 'meow',
+	// 	description: 'Simple Discord bot for recording voice channels.',
+	// 	tags: ['typescript'],
+	// 	githubUrl: 'https://github.com/prodbyeagle/meow',
+	// 	deprecated: true,
+	// },
+	// {
+	// 	title: 'link',
+	// 	description: 'Fast, minimalist link-in-bio built with Next.js.',
+	// 	tags: ['next.js', 'typescript', 'tailwind'],
+	// 	githubUrl: 'https://github.com/prodbyeagle/link',
+	// 	deprecated: true,
+	// },
+	// {
+	// 	title: 'eaglecord-website',
+	// 	description: 'website for the modded eagleCord project.',
+	// 	tags: ['next.js'],
+	// },
 	{
 		title: 'eaglecord',
-		description:
-			'a modded version of vencord, adding small features and changes.',
+		description: 'modded version of vencord that adds small features and tweaks.',
 		tags: ['typescript', 'electron'],
 		githubUrl: 'https://github.com/prodbyeagle/eagleCord',
 	},
 	{
+		title: 'next-template',
+		description: 'minimal Next.js starter with preconfigured tools.',
+		tags: ['typescript'],
+		githubUrl: 'https://github.com/prodbyeagle/next-template',
+	},
+	{
+		title: 'discord.js-template',
+		description: 'lightweight discord.js starter with common libraries and configs.',
+		tags: ['typescript'],
+		githubUrl: 'https://github.com/meowlounge/discord-template',
+	},
+	{
 		title: '.eagle',
-		description: 'adds powerful commands to powershell.',
+		description: 'PowerShell toolkit that adds useful commands.',
 		tags: ['powershell'],
 		githubUrl: 'https://github.com/prodbyeagle/.eagle',
 	},
 	{
 		title: '.www',
-		description: 'my portfolio. you are here.',
+		description: 'Personal website.',
 		tags: ['next.js', 'typescript', 'tailwind'],
 		githubUrl: 'https://github.com/prodbyeagle/.www',
 	},

@@ -1,14 +1,15 @@
 import { type Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
+import { Geist_Mono } from 'next/font/google';
 
 import './globals.css';
 
-import { ReactScan } from '@/components';
-
-import { Gradient } from '@/components/mesh-gradient';
+import { DottedBackground } from '@/components/eagle/dotted';
+import { ReactScan } from '@/components/eagle/react-scan';
+import { ThemeToggle } from '@/components/eagle/theme-toggle';
 
 export const metadata: Metadata = {
-	title: 'eagle',
+	title: 'prodbyeagle was here.',
 	description:
 		'a passionate developer building performant, accessible, and modern web experiences.',
 	icons: {
@@ -17,12 +18,12 @@ export const metadata: Metadata = {
 			type: 'image/gif',
 		},
 	},
-	metadataBase: new URL('https://prodbyeagle.vercel.app'),
+	metadataBase: new URL('https://prodbyeagle.dev'),
 	openGraph: {
 		title: 'prodbyeagle',
 		description:
 			'a passionate developer building performant, accessible, and modern web experiences.',
-		url: 'https://prodbyeagle.vercel.app',
+		url: 'https://prodbyeagle.dev',
 		siteName: 'prodbyeagle',
 		locale: 'en_US',
 		type: 'website',
@@ -36,36 +37,44 @@ export const metadata: Metadata = {
 	},
 };
 
-const font = Inter({
-	variable: '--font-sans',
+const geistMono = Geist_Mono({
+	variable: '--font-geist-mono',
 	subsets: ['latin'],
 });
 
 export default function RootLayout({
-	children,
-}: Readonly<{
+									   children,
+								   }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body
-				className={`${font.variable} antialiased font-sans tracking-tight cursor-default select-none relative dark`}>
-				<div className='fixed inset-0 -z-10 opacity-50'>
-					<Gradient
-						colors={[
-							'#ca9bee',
-							'#8b64a8',
-							'#523868',
-							'#4f2c74',
-							'#ff6f61',
-							'#ffcc00',
-						]}
-					/>
+		<body
+			className={`${geistMono.variable} antialiased font-mono tracking-tight cursor-default select-none relative`}>
+		<ThemeProvider
+			attribute='class'
+			defaultTheme='system'
+			enableSystem>
+			<div className='sticky top-4 z-50 w-full px-4 flex justify-end pointer-events-none'>
+				<div className='pointer-events-auto'>
+					<ThemeToggle />
 				</div>
+			</div>
 
-				<div className='container mx-auto relative z-0'>{children}</div>
-				<ReactScan />
-			</body>
+			<div className='fixed inset-0 -z-10'>
+				<DottedBackground
+					dotColor='var(--ring)'
+					spacing={28}
+					dotSize={2}
+				/>
+			</div>
+
+			<div className='container mx-auto relative z-0'>
+				{children}
+			</div>
+		</ThemeProvider>
+		<ReactScan />
+		</body>
 		</html>
 	);
 }

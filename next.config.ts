@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'kappa.lol',
+				hostname: 'cdn.discordapp.com',
 				port: '',
 				pathname: '**',
 				search: '',
@@ -21,13 +21,8 @@ const nextConfig: NextConfig = {
 				permanent: true,
 			},
 			{
-				source: '/discord',
-				destination: 'https://discord.gg/KNc4bnA2fU',
-				permanent: true,
-			},
-			{
-				source: '/socials',
-				destination: 'https://eaglelink.vercel.app/prodbyeagle',
+				source: '/threads',
+				destination: 'https://www.threads.net/@prodbyeagle',
 				permanent: true,
 			},
 		];

@@ -1,26 +1,18 @@
 'use client';
 
-import {
-	BentoGrid,
-	BentoGridItem,
-	ProjectCard,
-	WordReveal,
-} from '@/components';
 import { useState } from 'react';
 
-import { Label } from '@/components/ui/label';
+import { BentoGrid } from '@/components/bento-grid';
+import { BentoGridItem } from '@/components/bento-grid-item';
+import { ProjectCard } from '@/components/project-card';
 import { Separator } from '@/components/ui/separator';
-import { Switch } from '@/components/ui/switch';
+import { WordReveal } from '@/components/word-reveal';
 
 import { PROJECTS } from '@/lib/projects';
+import Link from 'next/link';
 
 export default function Home() {
-	const [showDeprecated, setShowDeprecated] = useState(false);
 	const [hovered, setHovered] = useState(false);
-
-	const filteredProjects = PROJECTS.filter(
-		(project) => showDeprecated || !project.deprecated
-	);
 
 	return (
 		<div className='pt-14'>
@@ -30,14 +22,10 @@ export default function Home() {
 						<WordReveal
 							onMouseEnter={() => setHovered(true)}
 							onMouseLeave={() => setHovered(false)}
-							letter={hovered ? true : false}
+							letter
 							position='bottom'
-							speed={hovered ? 0.15 : 0.1}
-							text={
-								hovered
-									? 'prodbyeagle.'
-									: 'hello, my name is noah ( eagle )'
-							}
+							speed={hovered ? 0.15 : 0.25}
+							text={hovered ? 'prodbyeagle' : 'noah / eagle'}
 						/>
 					</h1>
 				</div>
@@ -47,33 +35,25 @@ export default function Home() {
 				<section className='mb-8'>
 					<div className='max-w-2xl space-y-4'>
 						<WordReveal
-							speed={0.01}
-							className='text-foreground'
-							text='a hobby frontend developer and music producer passionate about crafting fast, accessible web experiences.'
+							speed={0.03}
+							className='text-text-secondary'
+							text='a hobby developer and music producer passionate about crafting fast, accessible web experiences and modern tools.'
 						/>
 					</div>
 				</section>
 
 				<section className='mb-16'>
-					<div className='flex items-center justify-between mb-6'>
-						<h2 className='text-xl font-medium'>active projects</h2>
-
-						<div className='flex items-center gap-2'>
-							<Label htmlFor='toggle-deprecated'>
-								show deprecated projects
-							</Label>
-							<Switch
-								id='toggle-deprecated'
-								checked={showDeprecated}
-								onCheckedChange={setShowDeprecated}
-							/>
-						</div>
-					</div>
+					<h2 className="text-xl font-medium mb-6">
+						projects /{' '}
+						<Link href="/socials" className="hover:underline text-destructive">
+							socials
+						</Link>
+					</h2>
 
 					<Separator className='my-6' />
 
 					<BentoGrid>
-						{filteredProjects.map((project, i) => (
+						{PROJECTS.map((project, i) => (
 							<BentoGridItem
 								key={project.title}
 								className={i % 4 === 0 ? 'md:col-span-2' : ''}>
