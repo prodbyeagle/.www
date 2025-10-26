@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { WordReveal } from '@/components/word-reveal';
 
 const SOCIALS = [
-	{ title: 'YouTube', url: 'https://youtube.com/@prodbyeagle' },
-	{ title: 'GitHub', url: '/github' },
-	{ title: 'Threads', url: '/threads' },
+        { title: 'YouTube', url: 'https://youtube.com/@prodbyeagle' },
+        { title: 'GitHub', url: 'https://github.com/prodbyeagle' },
+        { title: 'Threads', url: 'https://www.threads.net/@prodbyeagle' },
 ].map((social) => ({
 	...social,
 	speed: 0.03 + Math.random() * 0.07,
