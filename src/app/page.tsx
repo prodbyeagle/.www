@@ -4,7 +4,7 @@ import * as motion from 'motion/react-client';
 
 import { AnimatedLink } from '@/components/animated-link';
 import { HoverCard } from '@/components/hover-card';
-import { LastFmHoverCard } from '@/components/lastfm-hover-card';
+import { Intro } from '@/components/intro';
 import { NameSwap } from '@/components/name-swap';
 
 import { PROJECTS } from '@/lib/projects';
@@ -26,35 +26,9 @@ export default function Home() {
 						<NameSwap />
 					</motion.h1>
 
-					<motion.div
-						className='mt-4 max-w-lg text-base leading-relaxed text-text-secondary'
-						initial={{ opacity: 0, y: 6 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.6,
-							delay: 0.25,
-							ease: FADE_EASE,
-						}}>
-						hobby
-						<HoverCard
-							image='https://github.com/prodbyeagle.png?size=40'
-							imageAlt=''
-							imageRounded='full'
-							content='just vibecoding tools for mac. mostly personal use.'>
-							developer
-						</HoverCard>
-						,
-						<HoverCard
-							image='https://cdn.discordapp.com/emojis/1385016033831555233.gif'
-							imageAlt=''
-							content='making all types of beats in my freetime.'>
-							music producer
-						</HoverCard>
-						, and listener of{' '}
-						<LastFmHoverCard>different music</LastFmHoverCard> —
-						crafting fast, accessible web experiences and modern
-						tools.
-					</motion.div>
+					<div className='mt-4 max-w-lg text-base leading-relaxed text-text-secondary'>
+						<Intro />
+					</div>
 				</header>
 
 				<motion.section
