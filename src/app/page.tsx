@@ -26,17 +26,9 @@ export default function Home() {
 						<NameSwap />
 					</motion.h1>
 
-					<motion.div
-						className='mt-4 max-w-lg text-base leading-relaxed text-text-secondary'
-						initial={{ opacity: 0, y: 6 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.6,
-							delay: 0.25,
-							ease: FADE_EASE,
-						}}>
+					<div className='mt-4 max-w-lg text-base leading-relaxed text-text-secondary'>
 						<Intro />
-					</motion.div>
+					</div>
 				</header>
 
 				<motion.section
