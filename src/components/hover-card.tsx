@@ -22,6 +22,7 @@ interface HoverCardProps {
 	imageRounded?: 'none' | 'sm' | 'full';
 	imageUnoptimized?: boolean;
 	className?: string;
+	triggerWrapper?: (children: ReactNode) => ReactNode;
 	underline?: boolean;
 }
 
@@ -41,6 +42,7 @@ export function HoverCard({
 	imageRounded = 'none',
 	imageUnoptimized = false,
 	className,
+	triggerWrapper,
 	underline = true,
 }: HoverCardProps) {
 	const [open, setOpen] = useState(false);
@@ -78,21 +80,8 @@ export function HoverCard({
 		}
 	}
 
-	return (
-		<span
-			ref={triggerRef}
-			tabIndex={0}
-			className={cn(
-				'relative inline-block whitespace-nowrap cursor-default align-baseline rounded-sm focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2',
-				className
-			)}
-			onMouseEnter={() => setOpen(true)}
-			onMouseLeave={handleLeave}
-			onMouseMove={handleMove}
-			onFocus={() => setOpen(true)}
-			onBlur={handleLeave}
-			onKeyDown={handleKeyDown}
-			aria-describedby={open ? id : undefined}>
+	const trigger = (
+		<>
 			{image ? (
 				<span
 					className={cn(
@@ -118,6 +107,25 @@ export function HoverCard({
 				)}>
 				{children}
 			</span>
+		</>
+	);
+
+	return (
+		<span
+			ref={triggerRef}
+			tabIndex={0}
+			className={cn(
+				'relative inline-block whitespace-nowrap cursor-default align-baseline rounded-sm focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2',
+				className
+			)}
+			onMouseEnter={() => setOpen(true)}
+			onMouseLeave={handleLeave}
+			onMouseMove={handleMove}
+			onFocus={() => setOpen(true)}
+			onBlur={handleLeave}
+			onKeyDown={handleKeyDown}
+			aria-describedby={open ? id : undefined}>
+			{triggerWrapper ? triggerWrapper(trigger) : trigger}
 
 			<AnimatePresence>
 				{open && (
