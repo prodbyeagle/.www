@@ -8,11 +8,11 @@ interface Project {
 
 export const PROJECTS: Project[] = [
 	{
-		title: 'eaglecord',
+		title: 'spyglasses',
 		description:
-			'modded version of vencord that adds small features and tweaks.',
-		languages: ['typescript', 'electron'],
-		githubUrl: 'https://github.com/prodbyeagle/eagleCord',
+			'lightweight macos menu bar app that shows live network throughput.',
+		languages: ['swift', 'swiftui', 'macos'],
+		githubUrl: 'https://github.com/prodbyeagle/spyglasses',
 	},
 	{
 		title: 'cli',
