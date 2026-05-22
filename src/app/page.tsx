@@ -95,7 +95,7 @@ export default function Home() {
 					}}>
 					<p>
 						&copy; {year} noah. all rights reserved.
-						{commitHash ? ` commit ${commitHash}` : null}
+						{commitHash ? ` @${commitHash}` : null}
 					</p>
 					<nav className='flex flex-wrap gap-x-5 gap-y-2'>
 						<AnimatedLink
