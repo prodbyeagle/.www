@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbopack",
+		"dev": "NEXT_PUBLIC_COMMIT_SHA=${CF_PAGES_COMMIT_SHA:-$(git rev-parse --short HEAD)} next dev --turbopack",
 		"build": "NEXT_PUBLIC_COMMIT_SHA=${CF_PAGES_COMMIT_SHA:-$(git rev-parse --short HEAD)} next build",
 		"pages:build": "NEXT_PUBLIC_COMMIT_SHA=${CF_PAGES_COMMIT_SHA:-$(git rev-parse --short HEAD)} opennextjs-cloudflare build",
 		"preview": "NEXT_PUBLIC_COMMIT_SHA=${CF_PAGES_COMMIT_SHA:-$(git rev-parse --short HEAD)} opennextjs-cloudflare build && opennextjs-cloudflare preview",

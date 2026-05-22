@@ -85,7 +85,7 @@ export default function Home() {
 				</motion.section>
 
 				<motion.footer
-					className='flex flex-col gap-4 border-t border-text-tertiary/15 pt-6 text-sm text-text-tertiary sm:flex-row sm:items-center sm:justify-between'
+					className='grid gap-4 border-t border-text-tertiary/15 pt-6 text-sm text-text-tertiary sm:grid-cols-[1fr_auto] sm:items-center'
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
@@ -93,10 +93,7 @@ export default function Home() {
 						delay: 0.9,
 						ease: FADE_EASE,
 					}}>
-					<p>
-						&copy; {year} noah. all rights reserved.
-						{commitHash ? ` @${commitHash}` : null}
-					</p>
+					<p>&copy; {year} noah. all rights reserved.</p>
 					<nav className='flex flex-wrap gap-x-5 gap-y-2'>
 						<AnimatedLink
 							href='/github'
@@ -123,6 +120,11 @@ export default function Home() {
 							instagram
 						</AnimatedLink>
 					</nav>
+					{commitHash ? (
+						<p className='text-xs text-text-tertiary/70 sm:col-span-2 sm:justify-self-end'>
+							@{commitHash}
+						</p>
+					) : null}
 				</motion.footer>
 			</div>
 		</div>
