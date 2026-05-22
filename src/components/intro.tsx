@@ -53,7 +53,15 @@ function splitWords(text: string): string[] {
 	return text.match(/\S+/g) ?? [];
 }
 
-function Word({ children, index }: { children: ReactNode; index: number }) {
+function Word({
+	children,
+	index,
+	wrap = false,
+}: {
+	children: ReactNode;
+	index: number;
+	wrap?: boolean;
+}) {
 	const reduceMotion = useReducedMotion();
 
 	return (
@@ -62,7 +70,11 @@ function Word({ children, index }: { children: ReactNode; index: number }) {
 			variants={reduceMotion ? WORD_REVEAL_REDUCED : WORD_REVEAL}
 			initial='hidden'
 			animate='show'
-			className='inline-block transform-gpu will-change-[filter,opacity,transform]'>
+			className={
+				wrap
+					? 'inline will-change-[filter,opacity]'
+					: 'inline-block transform-gpu will-change-[filter,opacity,transform]'
+			}>
 			{children}
 		</motion.span>
 	);
@@ -109,12 +121,15 @@ function renderSegments(
 				return (
 					<HoverCard
 						key={i}
+						className='inline whitespace-normal'
 						image={DEV_IMAGE}
 						imageAlt=''
 						imageRounded='full'
 						content={devContent}
 						triggerWrapper={(trigger) => (
-							<Word index={current}>{trigger}</Word>
+							<Word index={current} wrap>
+								{trigger}
+							</Word>
 						)}>
 						{seg.label}
 					</HoverCard>
@@ -126,11 +141,14 @@ function renderSegments(
 				return (
 					<HoverCard
 						key={i}
+						className='inline whitespace-normal'
 						image={MUSIC_IMAGE}
 						imageAlt=''
 						content={musicContent}
 						triggerWrapper={(trigger) => (
-							<Word index={current}>{trigger}</Word>
+							<Word index={current} wrap>
+								{trigger}
+							</Word>
 						)}>
 						{seg.label}
 					</HoverCard>

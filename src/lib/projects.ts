@@ -4,6 +4,7 @@ interface Project {
 	languages: string[];
 	url?: string;
 	githubUrl?: string;
+	isNew?: boolean;
 }
 
 export const PROJECTS: Project[] = [
@@ -11,8 +12,9 @@ export const PROJECTS: Project[] = [
 		title: 'spyglasses',
 		description:
 			'lightweight macos menu bar app that shows live network throughput.',
-		languages: ['swift', 'swiftui', 'macos'],
+		languages: ['swift'],
 		githubUrl: 'https://github.com/prodbyeagle/spyglasses',
+		isNew: true,
 	},
 	{
 		title: 'cli',

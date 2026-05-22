@@ -3,11 +3,13 @@
 import * as motion from 'motion/react-client';
 
 import { AnimatedLink } from '@/components/animated-link';
+import { ChromaticText } from '@/components/chromatic-text';
 import { HoverCard } from '@/components/hover-card';
 import { Intro } from '@/components/intro';
 import { NameSwap } from '@/components/name-swap';
 
 import { PROJECTS } from '@/lib/projects';
+import { cn } from '@/lib/utils';
 
 const FADE_EASE = [0.4, 0, 0.2, 1] as const;
 
@@ -27,7 +29,7 @@ export default function Home() {
 						<NameSwap />
 					</motion.h1>
 
-					<div className='mt-4 max-w-lg text-base leading-relaxed text-text-secondary'>
+					<div className='mt-4 max-w-lg break-words text-base leading-relaxed text-text-secondary'>
 						<Intro />
 					</div>
 				</header>
@@ -64,16 +66,29 @@ export default function Home() {
 									}}
 									className='py-4'>
 									<div className='flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-6'>
-										<HoverCard
-											underline={false}
-											content={project.description}>
-											<AnimatedLink
-												href={href}
-												external={isExternal}
-												className='text-base text-text'>
-												{project.title}
-											</AnimatedLink>
-										</HoverCard>
+										<div className='flex items-center gap-2'>
+											<HoverCard
+												underline={false}
+												content={project.description}>
+												<AnimatedLink
+													href={href}
+													external={isExternal}
+													className={cn(
+														'text-base',
+														project.isNew
+															? '!text-transparent hover:!text-transparent'
+															: 'text-text'
+													)}>
+													{project.isNew ? (
+														<ChromaticText>
+															{project.title}
+														</ChromaticText>
+													) : (
+														project.title
+													)}
+												</AnimatedLink>
+											</HoverCard>
+										</div>
 										<span className='text-sm text-text-tertiary sm:text-right'>
 											{project.languages?.join(' · ')}
 										</span>
