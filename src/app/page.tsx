@@ -13,6 +13,7 @@ const FADE_EASE = [0.4, 0, 0.2, 1] as const;
 
 export default function Home() {
 	const year = new Date().getFullYear();
+	const commitHash = process.env.NEXT_PUBLIC_COMMIT_SHA?.slice(0, 7);
 
 	return (
 		<div className='min-h-screen w-full px-6 py-20 sm:px-10 sm:py-28 md:px-16 lg:px-24'>
@@ -92,7 +93,10 @@ export default function Home() {
 						delay: 0.9,
 						ease: FADE_EASE,
 					}}>
-					<p>&copy; {year} noah. all rights reserved.</p>
+					<p>
+						&copy; {year} noah. all rights reserved.
+						{commitHash ? ` commit ${commitHash}` : null}
+					</p>
 					<nav className='flex flex-wrap gap-x-5 gap-y-2'>
 						<AnimatedLink
 							href='/github'
