@@ -83,9 +83,9 @@ export default function PsychiatriePrivacyPolicyPage() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, ease: FADE_EASE }}>
 				<Link
-					href='/psychiatrie'
+					href='/'
 					className='text-sm text-text-tertiary transition-colors hover:text-text'>
-					psychiatrie
+					prodbyeagle.dev
 				</Link>
 
 				<header className='mt-12 border-b border-text-tertiary/15 pb-8'>
