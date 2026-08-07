@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion, type Variants } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import type { ReactNode } from 'react';
 
 import { HoverCard } from '@/components/hover-card';
@@ -17,6 +17,30 @@ import {
 
 const DEV_IMAGE = 'https://github.com/prodbyeagle.png?size=40';
 const MUSIC_IMAGE = 'https://cdn.discordapp.com/emojis/1385016033831555233.gif';
+const variantCache = new Map<string, number>();
+
+function subscribeToIntroVariant() {
+	return () => {};
+}
+
+function getClientVariant(key: string, max: number) {
+	let variant = variantCache.get(key);
+
+	if (variant === undefined) {
+		variant = pickVariant(key, max);
+		variantCache.set(key, variant);
+	}
+
+	return variant;
+}
+
+function useIntroVariant(key: string, max: number) {
+	return useSyncExternalStore(
+		subscribeToIntroVariant,
+		() => getClientVariant(key, max),
+		() => 0
+	);
+}
 
 const WORD_REVEAL: Variants = {
 	hidden: {
@@ -161,17 +185,10 @@ function renderSegments(
 export function Intro() {
 	// Render the first variant on the server / first client paint to avoid
 	// hydration mismatch, then swap to the picked one once mounted.
-	const [a, setA] = useState(0);
-	const [b, setB] = useState(0);
-	const [dev, setDev] = useState(0);
-	const [music, setMusic] = useState(0);
-
-	useEffect(() => {
-		setA(pickVariant('intro:a', SLOT_A.length));
-		setB(pickVariant('intro:b', SLOT_B.length));
-		setDev(pickVariant('intro:dev', DEV_CONTENT.length));
-		setMusic(pickVariant('intro:music', MUSIC_CONTENT.length));
-	}, []);
+	const a = useIntroVariant('intro:a', SLOT_A.length);
+	const b = useIntroVariant('intro:b', SLOT_B.length);
+	const dev = useIntroVariant('intro:dev', DEV_CONTENT.length);
+	const music = useIntroVariant('intro:music', MUSIC_CONTENT.length);
 
 	const devContent = DEV_CONTENT[dev];
 	const musicContent = MUSIC_CONTENT[music];
